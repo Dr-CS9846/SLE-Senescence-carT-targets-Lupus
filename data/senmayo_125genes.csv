@@ -1,0 +1,126 @@
+Gene,Category,Source
+CDKN2A,Canonical,Herranz et al. 2018
+CDKN1A,Canonical,Herranz et al. 2018
+CDKN2B,Canonical,Herranz et al. 2018
+TP53,Canonical,Herranz et al. 2018
+RB1,Canonical,Herranz et al. 2018
+E2F1,Canonical,Herranz et al. 2018
+IL6,SASP,Coppé et al. 2010
+TNF,SASP,Coppé et al. 2010
+CXCL8,SASP,Coppé et al. 2010
+MMP3,SASP,Coppé et al. 2010
+MMP9,SASP,Coppé et al. 2010
+SERPINE1,SASP,Coppé et al. 2010
+IGFBP7,SASP,Coppé et al. 2010
+CCND1,Cell Cycle,Literature
+CCNE1,Cell Cycle,Literature
+CDKN3,CDK Inhibitor,Literature
+GADD45A,DNA Damage,Literature
+BAX,Apoptosis,Literature
+BCL2,Apoptosis,Literature
+CASP3,Apoptosis,Literature
+TP63,p53 Family,Literature
+PTEN,Tumor Suppressor,Literature
+BRCA1,DNA Repair,Literature
+MLH1,DNA Repair,Literature
+XPA,DNA Repair,Literature
+DDB2,DNA Repair,Literature
+H2AFX,DNA Damage,Literature
+ATM,DNA Damage Sensor,Literature
+ATR,DNA Damage Sensor,Literature
+CHEK2,Checkpoint,Literature
+TP53BP1,p53 Pathway,Literature
+MDM2,p53 Regulator,Literature
+JNK1,Stress Pathway,Literature
+p38,Stress Pathway,Literature
+ERK1,MAPK Pathway,Literature
+MAPK14,Stress Kinase,Literature
+NFKB1,Inflammation,Literature
+RELA,NF-kB,Literature
+IKBKG,NF-kB,Literature
+STAT3,Stat Pathway,Literature
+IL1B,Cytokine,Literature
+IL1A,Cytokine,Literature
+IFNG,Cytokine,Literature
+FASL,Death Ligand,Literature
+FAS,Death Receptor,Literature
+ICAM1,Adhesion,Literature
+VCAM1,Adhesion,Literature
+PECAM1,Adhesion,Literature
+CDH1,Adhesion,Literature
+TGFB1,Growth Factor,Literature
+VEGFA,Angiogenesis,Literature
+FGF2,Growth Factor,Literature
+HGF,Growth Factor,Literature
+EGF,Growth Factor,Literature
+PDGFA,Growth Factor,Literature
+PDGFB,Growth Factor,Literature
+PDGFC,Growth Factor,Literature
+PDGFD,Growth Factor,Literature
+ANG,Angiogenic Factor,Literature
+ANGPT1,Angiogenic Factor,Literature
+ANGPT2,Angiogenic Factor,Literature
+ANGPT4,Angiogenic Factor,Literature
+EDN1,Vasoconstrictor,Literature
+NOS3,Vasodilation,Literature
+PGF,Growth Factor,Literature
+PLGF,Growth Factor,Literature
+MMP2,Proteinase,Literature
+MMP1,Proteinase,Literature
+MMP10,Proteinase,Literature
+MMP11,Proteinase,Literature
+MMP12,Proteinase,Literature
+MMP13,Proteinase,Literature
+MMP14,Proteinase,Literature
+TIMP1,TIMP,Literature
+TIMP2,TIMP,Literature
+TIMP3,TIMP,Literature
+TIMP4,TIMP,Literature
+COL1A1,ECM,Literature
+COL1A2,ECM,Literature
+COL3A1,ECM,Literature
+COL4A1,ECM,Literature
+COL5A1,ECM,Literature
+FN1,ECM,Literature
+LAMA1,ECM,Literature
+LAMB1,ECM,Literature
+LAMC1,ECM,Literature
+HSPB1,Heat Shock,Literature
+HSPA1A,Heat Shock,Literature
+HSP90AA1,Heat Shock,Literature
+DNAJA1,Chaperone,Literature
+HSPA4,Chaperone,Literature
+BAG1,Stress Response,Literature
+CHOP,Stress Response,Literature
+DDIT3,ER Stress,Literature
+ATF3,ER Stress,Literature
+ATF4,ER Stress,Literature
+XBP1,ER Stress,Literature
+NFKBIA,NF-kB Inhibitor,Literature
+PTEN,Phosphatase,Literature
+PP2A,Phosphatase,Literature
+DUSP1,Phosphatase,Literature
+FOXO3,Transcription,Literature
+FOXO1,Transcription,Literature
+RUNX1,Transcription,Literature
+STAT1,Stat Pathway,Literature
+STAT5A,Stat Pathway,Literature
+STAT5B,Stat Pathway,Literature
+STAT6,Stat Pathway,Literature
+SMAD2,TGF Pathway,Literature
+SMAD3,TGF Pathway,Literature
+SMAD4,TGF Pathway,Literature
+SMAD7,TGF Pathway,Literature
+CTGF,Fibrosis,Literature
+FSTL1,Fibrosis,Literature
+ADAMTS1,Protease,Literature
+ADAMTS4,Protease,Literature
+ADAMTS5,Protease,Literature
+SERPINA1,Protease Inhibitor,Literature
+SERPINB2,Protease Inhibitor,Literature
+SERPINC1,Protease Inhibitor,Literature
+SERPINE2,Protease Inhibitor,Literature
+PAI2,Protease Inhibitor,Literature
+COX2,Inflammation,Literature
+PTGS2,Inflammation,Literature
+CRP,Inflammation,Literature

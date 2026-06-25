@@ -1,0 +1,90 @@
+2026-06-25 19:07:49,676 - INFO - ============================================================
+2026-06-25 19:07:49,676 - INFO - FLEXIBLE MULTI-OMICS INTEGRATION PIPELINE v2
+2026-06-25 19:07:49,676 - INFO - ============================================================
+2026-06-25 19:07:49,676 - INFO - Base path: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets
+2026-06-25 19:07:49,676 - INFO - Output path: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\data\external_validation
+2026-06-25 19:07:49,676 - INFO - 
+2026-06-25 19:07:49,676 - INFO - AUTO-DETECTING AVAILABLE DATASETS...
+2026-06-25 19:07:49,678 - INFO -   Found: GSE142016 (series_matrix.txt)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE162577 (series_matrix.txt)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE174188 (series_matrix.txt)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE179633 (series_matrix.txt)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE318067 (series_matrix.txt)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE36700 (series_matrix.txt)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE122459_normalized_genes_all_samples.xlsx (Excel)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE139358_RNA-Seq_gene_rpkm_18_samples.xlsx (Excel)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE139358_RNA-Seq_gene_rpkm_33_samples.xlsx (Excel)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE155405_GEN141016_F_Profiling_table.xlsx (Excel)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE200306_Nanostring_RAW_1-21.xlsx (Excel)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE228066_gene.xlsx (Excel)
+2026-06-25 19:07:49,678 - INFO -   Found: GSE267852_ASCvVFB_heatmap_for_metadata_submission_to_GEO.xlsx (Excel)
+2026-06-25 19:07:49,680 - INFO -   Found: GSE318067_Rules_Based_Medicine__RBM__proteomics_array_data.xlsx (Excel)
+2026-06-25 19:07:49,680 - INFO -   Found: GSE318067_SomaLogic_SOMAscan_proteomics_array_data.xlsx (Excel)
+2026-06-25 19:07:49,680 - INFO -   Found: GSE142016 (RAW folder with 9 files)
+2026-06-25 19:07:49,681 - INFO -   Found: GSE162577 (RAW folder with 9 files)
+2026-06-25 19:07:49,681 - INFO -   Found: GSE181500 (RAW folder with 12 files)
+2026-06-25 19:07:49,681 - INFO -   Found: GSE182825 (RAW folder with 41 files)
+2026-06-25 19:07:49,681 - INFO -   Found: GSE294496 (RAW folder with 4 files)
+2026-06-25 19:07:49,681 - INFO -   Found: GSE36700 (RAW folder with 50 files)
+2026-06-25 19:07:49,681 - INFO - 
+2026-06-25 19:07:49,681 - INFO - SUMMARY: Found 6 series matrix files, 9 Excel files, 6 RAW folders
+2026-06-25 19:07:49,681 - INFO - 
+2026-06-25 19:07:49,681 - INFO - ============================================================
+2026-06-25 19:07:49,681 - INFO - CATEGORY 1: SLE BULK RNA-seq
+2026-06-25 19:07:49,681 - INFO - ============================================================
+2026-06-25 19:07:49,681 - INFO - Loading: GSE122459_normalized_genes_all_samples.xlsx
+2026-06-25 19:07:49,681 - ERROR - Failed to load D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE122459_normalized_genes_all_samples.xlsx: [Errno 13] Permission denied: 'D:\\New folder\\Research\\53. Zeshan Gondal\\5. Lupus\\datasets\\GSE122459_normalized_genes_all_samples.xlsx'
+2026-06-25 19:07:49,681 - INFO - Loading: GSE228066_gene.xlsx
+2026-06-25 19:08:02,099 - INFO -   Loaded: 17826 rows × 46 columns
+2026-06-25 19:08:02,099 - ERROR - Normalization failed: could not convert string to float: 'FLT3LG'
+2026-06-25 19:08:02,099 - INFO - ============================================================
+2026-06-25 19:08:02,099 - INFO - CATEGORY 2: scRNA-seq
+2026-06-25 19:08:02,099 - INFO - ============================================================
+2026-06-25 19:08:02,099 - INFO - Loading RAW folder: GSE162577
+2026-06-25 19:08:02,099 - INFO -   Detected: MTX sparse matrix format (3 file(s))
+2026-06-25 19:08:02,928 - ERROR - Failed to load MTX: Not a gzipped file (b'Ra')
+2026-06-25 19:08:02,928 - INFO - Loading RAW folder: GSE179633
+2026-06-25 19:08:02,928 - INFO -   Detected: Text files (1 file(s))
+2026-06-25 19:08:02,928 - ERROR - Failed to load GSE179633_series_matrix.txt: Error tokenizing data. C error: Expected 2 fields in line 43, saw 31
+
+2026-06-25 19:08:02,928 - INFO - ============================================================
+2026-06-25 19:08:02,928 - INFO - CATEGORY 3: TISSUE
+2026-06-25 19:08:02,928 - INFO - ============================================================
+2026-06-25 19:08:02,928 - INFO - Loading RAW folder: GSE174188
+2026-06-25 19:08:02,928 - INFO -   Detected: Text files (1 file(s))
+2026-06-25 19:08:02,943 - ERROR - Failed to load GSE174188_series_matrix.txt: Error tokenizing data. C error: Expected 2 fields in line 57, saw 89
+
+2026-06-25 19:08:02,943 - INFO - Loading RAW folder: GSE36700
+2026-06-25 19:08:02,943 - INFO -   Detected: Affymetrix CEL format (25 files)
+2026-06-25 19:08:02,943 - INFO - Loading: GSE155405_GEN141016_F_Profiling_table.xlsx
+2026-06-25 19:08:04,679 - INFO -   Loaded: 11 rows × 1 columns
+2026-06-25 19:08:04,679 - ERROR - Normalization failed: could not convert string to float: 'Detectable Transcipts in RNA-seq Analysis of Mouse Whole Kidney'
+2026-06-25 19:08:04,679 - INFO - Loading: GSE200306_Nanostring_RAW_1-21.xlsx
+2026-06-25 19:08:04,917 - INFO -   Loaded: 631 rows × 17 columns
+2026-06-25 19:08:04,917 - ERROR - Normalization failed: could not convert string to float: 'File Attributes'
+2026-06-25 19:08:04,917 - INFO - Loading RAW folder: GSE182825
+2026-06-25 19:08:04,917 - WARNING -   RAW folder format not recognized
+2026-06-25 19:08:04,917 - INFO - Loading RAW folder: GSE294496
+2026-06-25 19:08:04,917 - WARNING -   RAW folder format not recognized
+2026-06-25 19:08:04,917 - INFO - ============================================================
+2026-06-25 19:08:04,917 - INFO - CATEGORY 4: SENESCENCE VALIDATION
+2026-06-25 19:08:04,917 - INFO - ============================================================
+2026-06-25 19:08:04,917 - INFO - 
+2026-06-25 19:08:04,917 - INFO - ============================================================
+2026-06-25 19:08:04,917 - INFO - PIPELINE SUMMARY
+2026-06-25 19:08:04,917 - INFO - ============================================================
+2026-06-25 19:08:04,917 - INFO - Category_1_Bulk: 0/2 successful
+2026-06-25 19:08:04,917 - WARNING -   GSE122459_excel: LOAD_FAILED
+2026-06-25 19:08:04,917 - WARNING -   GSE228066_excel: NORMALIZE_FAILED
+2026-06-25 19:08:04,917 - INFO - Category_2_scRNA: 0/2 successful
+2026-06-25 19:08:04,917 - WARNING -   GSE162577: LOAD_FAILED
+2026-06-25 19:08:04,917 - WARNING -   GSE179633: LOAD_FAILED
+2026-06-25 19:08:04,917 - INFO - Category_3_Tissue: 0/4 successful
+2026-06-25 19:08:04,917 - WARNING -   GSE174188: LOAD_FAILED
+2026-06-25 19:08:04,917 - WARNING -   GSE36700: LOAD_FAILED
+2026-06-25 19:08:04,917 - WARNING -   GSE182825: LOAD_FAILED
+2026-06-25 19:08:04,917 - WARNING -   GSE294496: LOAD_FAILED
+2026-06-25 19:08:04,917 - INFO - Category_4_Senescence: 0/0 successful
+2026-06-25 19:08:04,917 - INFO - 
+2026-06-25 19:08:04,917 - INFO - Results saved to: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\data\external_validation
+2026-06-25 19:08:04,917 - INFO - PIPELINE COMPLETE

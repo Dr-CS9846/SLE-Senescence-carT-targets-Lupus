@@ -1,0 +1,51 @@
+2026-06-25 19:02:22,928 - INFO - START: Multi-Dataset Integration Pipeline
+2026-06-25 19:02:22,930 - INFO - Base path: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets
+2026-06-25 19:02:22,930 - INFO - Output path: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\data\external_validation
+2026-06-25 19:02:22,930 - INFO - ============================================================
+2026-06-25 19:02:22,930 - INFO - CATEGORY 1: SLE BULK RNA-seq
+2026-06-25 19:02:22,930 - INFO - ============================================================
+2026-06-25 19:02:22,930 - INFO - Looking for: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE72509\GSE72509_series_matrix.txt.gz
+2026-06-25 19:02:22,930 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE72509\GSE72509_series_matrix.txt.gz
+2026-06-25 19:02:22,930 - INFO - Looking for: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE112087\GSE112087_series_matrix.txt.gz
+2026-06-25 19:02:22,931 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE112087\GSE112087_series_matrix.txt.gz
+2026-06-25 19:02:22,931 - INFO - Looking for: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE181500\GSE181500_series_matrix.txt.gz
+2026-06-25 19:02:22,931 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE181500\GSE181500_series_matrix.txt.gz
+2026-06-25 19:02:22,931 - INFO - Looking for: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE228066\GSE228066_series_matrix.txt.gz
+2026-06-25 19:02:22,931 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE228066\GSE228066_series_matrix.txt.gz
+2026-06-25 19:02:22,931 - INFO - Looking for: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE122459\GSE122459_series_matrix.txt.gz
+2026-06-25 19:02:22,932 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE122459\GSE122459_series_matrix.txt.gz
+2026-06-25 19:02:22,932 - INFO - ============================================================
+2026-06-25 19:02:22,932 - INFO - CATEGORY 2: scRNA-seq
+2026-06-25 19:02:22,932 - INFO - ============================================================
+2026-06-25 19:02:22,932 - WARNING - Path not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasetsGSE135779/GSE135779.h5ad
+2026-06-25 19:02:22,932 - WARNING - Path not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasetsGSE139358/
+2026-06-25 19:02:22,932 - WARNING - Path not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasetsGSE162577/GSE162577.h5ad
+2026-06-25 19:02:22,932 - WARNING - Path not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasetsGSE163121/GSE163121.h5ad
+2026-06-25 19:02:22,932 - WARNING - Path not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasetsGSE179633/
+2026-06-25 19:02:22,932 - WARNING - Path not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasetsGSE266852/GSE266852.h5ad
+2026-06-25 19:02:22,932 - INFO - ============================================================
+2026-06-25 19:02:22,932 - INFO - CATEGORY 3: TISSUE
+2026-06-25 19:02:22,932 - INFO - ============================================================
+2026-06-25 19:02:22,932 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE36700\GSE36700_series_matrix.txt.gz
+2026-06-25 19:02:22,932 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE155405\GSE155405_series_matrix.txt.gz
+2026-06-25 19:02:22,934 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE200306\GSE200306_series_matrix.txt.gz
+2026-06-25 19:02:22,934 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE174188\GSE174188_series_matrix.txt.gz
+2026-06-25 19:02:22,934 - WARNING - Path not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasetsGSE294496/
+2026-06-25 19:02:22,934 - WARNING - Path not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasetsGSE182825/GSE182825.h5ad
+2026-06-25 19:02:22,934 - INFO - ============================================================
+2026-06-25 19:02:22,934 - INFO - CATEGORY 4: SENESCENCE VALIDATION
+2026-06-25 19:02:22,934 - INFO - ============================================================
+2026-06-25 19:02:22,934 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE101766\GSE101766_series_matrix.txt.gz
+2026-06-25 19:02:22,934 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE226598\GSE226598_series_matrix.txt.gz
+2026-06-25 19:02:22,934 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE262856\GSE262856_series_matrix.txt.gz
+2026-06-25 19:02:22,934 - WARNING - File not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasets\GSE297723\GSE297723_series_matrix.txt.gz
+2026-06-25 19:02:22,934 - WARNING - Path not found: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\datasetsGSE157007/
+2026-06-25 19:02:22,934 - INFO - ============================================================
+2026-06-25 19:02:22,934 - INFO - PIPELINE SUMMARY
+2026-06-25 19:02:22,934 - INFO - ============================================================
+2026-06-25 19:02:22,934 - INFO - Category_1_Bulk: {}
+2026-06-25 19:02:22,934 - INFO - Category_2_scRNA: {'GSE135779': 'PATH_NOT_FOUND', 'GSE139358': 'PATH_NOT_FOUND', 'GSE162577': 'PATH_NOT_FOUND', 'GSE163121': 'PATH_NOT_FOUND', 'GSE179633': 'PATH_NOT_FOUND', 'GSE266852': 'PATH_NOT_FOUND'}
+2026-06-25 19:02:22,934 - INFO - Category_3_Tissue: {}
+2026-06-25 19:02:22,934 - INFO - Category_4_Senescence: {}
+2026-06-25 19:02:22,934 - INFO - COMPLETE: All datasets processed
+2026-06-25 19:02:22,934 - INFO - Results saved to: D:\New folder\Research\53. Zeshan Gondal\5. Lupus\data\external_validation

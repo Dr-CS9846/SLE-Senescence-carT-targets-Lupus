@@ -1,0 +1,13 @@
+{
+  "Category_1_Bulk": {},
+  "Category_2_scRNA": {
+    "GSE135779": "PATH_NOT_FOUND",
+    "GSE139358": "PATH_NOT_FOUND",
+    "GSE162577": "PATH_NOT_FOUND",
+    "GSE163121": "PATH_NOT_FOUND",
+    "GSE179633": "PATH_NOT_FOUND",
+    "GSE266852": "PATH_NOT_FOUND"
+  },
+  "Category_3_Tissue": {},
+  "Category_4_Senescence": {}
+}
