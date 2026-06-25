@@ -47,29 +47,22 @@ def load_mtx_directory(folder_path):
         # Check if this folder contains subdirectories with MTX files (like GSE163121_RAW)
         subdirs = [d for d in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, d))]
 
-        # If subdirs exist and contain MTX files, process them all
+        # If subdirs exist and contain MTX files, load first successful one
         mtx_subdirs = []
         for subdir in subdirs:
             subdir_path = os.path.join(folder_path, subdir)
-            if any('matrix.mtx' in f for f in os.listdir(subdir_path)):
-                mtx_subdirs.append(subdir_path)
+            try:
+                if any('matrix.mtx' in f for f in os.listdir(subdir_path)):
+                    mtx_subdirs.append(subdir_path)
+            except:
+                continue
 
         if mtx_subdirs:
-            # Multiple samples - combine them
-            all_matrices = []
-            all_features = None
-
+            # Try each MTX folder, return first success
             for mtx_dir in sorted(mtx_subdirs):
                 df_sample = load_single_mtx(mtx_dir)
                 if df_sample is not None:
-                    all_matrices.append(df_sample)
-                    if all_features is None:
-                        all_features = df_sample.columns.tolist()
-
-            if all_matrices:
-                # Concatenate all samples (stack rows)
-                combined = pd.concat(all_matrices, axis=0)
-                return combined
+                    return df_sample
             return None
 
         # Single sample - process directly
