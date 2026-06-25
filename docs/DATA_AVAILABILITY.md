@@ -16,7 +16,7 @@ cd datasets
 
 ### Step 2: Download datasets from GEO
 
-The following 17 datasets (successfully integrated) are available for download:
+The following 19 datasets were targeted for integration. Currently, 3/19 (16%) successfully process through the pipeline:
 
 #### Category 1: SLE Bulk RNA-seq (5 datasets)
 ```bash
@@ -127,39 +127,43 @@ python scripts/pipeline_complete.py
 
 This will:
 1. Auto-discover all dataset files in `datasets/`
-2. Process all 17 datasets
-3. Generate senescence scores in `data/external_validation/`
+2. Attempt to process all 19 datasets
+3. Generate senescence scores in `data/external_validation/` for successfully loaded datasets
 
-Expected runtime: ~5 minutes for all 17 datasets
+Expected runtime: ~5 minutes. Note: Due to file access and format compatibility issues, only 3/19 datasets (16%) currently process successfully.
 
 ---
 
-## Successfully Integrated Datasets (17 total)
+## Successfully Integrated Datasets (3/19 total)
 
-All 17 datasets listed above are processed by the pipeline and generate senescence scores in `data/external_validation/`
+Only 3/19 datasets currently process successfully through the pipeline and generate senescence scores in `data/external_validation/`
 
 **Integration status by category:**
-- Bulk RNA-seq: 4/5 successfully processed
-- scRNA-seq: 4/6 successfully processed
-- Tissue: 6/6 successfully processed (100%)
-- Senescence Reference: 3/5 successfully processed
+- Bulk RNA-seq: 1/5 successfully processed (GSE228066)
+- scRNA-seq: 1/5 successfully processed (GSE139358)
+- Tissue: 1/5 successfully processed (GSE36700)
+- Senescence Reference: 0/4 successfully processed
 
 ---
 
-## Known Issues (4 datasets not integrated)
+## Pipeline Failures (16/19 datasets not processed)
 
-### GSE181500 & GSE163121 (TAR extraction complexity)
-- Archived in .tar format with nested directory structures
-- Require manual extraction: `tar -xf GSE181500_RAW.tar`
-- Currently not processed by pipeline
+### Permission Denied (Windows File Locks)
+The following datasets fail with permission errors due to file locks (likely antivirus or file explorer):
+- GSE72509, GSE112087, GSE122459, GSE174188, GSE182825, GSE200306
 
-### GSE226598 & GSE157007 (Data unavailable)
-- Not found in downloaded datasets
-- May have restricted access or recent upload delays
+### File Not Found / Format Issues
+These datasets either were not downloaded or have format compatibility issues:
+- GSE101766, GSE226598, GSE262856, GSE297723 (Senescence reference - not found)
+- GSE163121, GSE266852 (scRNA - MTX format or nested structure issues)
+- GSE179633 (scRNA - file format issues)
 
-### GSE266852 (MTX format ambiguity)
-- Multiple feature files with identical naming
-- Skipped to avoid file conflicts
+### Reason for Low Success Rate
+The high failure rate (16/19) is primarily due to:
+1. **Windows file locking** - Files locked by antivirus/file explorer prevent reading
+2. **Missing files** - Some datasets incomplete download or unavailable on GEO
+3. **Format complexity** - MTX sparse matrices with nested directory structures
+4. **Alternative approach needed** - Consider Git LFS or external data storage for large files
 
 ---
 

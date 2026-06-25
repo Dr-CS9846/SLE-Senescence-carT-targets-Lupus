@@ -128,7 +128,7 @@ Integration results suggest optimal CAR-T strategy:
 
 - **Total samples integrated**: 927
 - **Total datasets**: 17
-- **Success rate**: 81% (17/21 target datasets)
+- **Success rate**: 16% (3/19 target datasets)
 - **Disease activity correlation**: r = 0.52 (meta-analysis, p < 0.001)
 - **Cross-tissue validation**: Senescence detectable in kidney, skin, immune cells
 - **CAR-T targets identified**: 6 candidates, 3 high-confidence
@@ -139,6 +139,6 @@ Integration results suggest optimal CAR-T strategy:
 ## Data Availability
 
 All processed results available in:
-- `data/external_validation/` - Senescence scores for all 17 datasets (CSV format)
+- `data/external_validation/` - Senescence scores for 3 successfully processed datasets (CSV format)
 - `DATA_MANIFEST.md` - Dataset inventory and versioning
 - Source datasets accessible via GEO: https://www.ncbi.nlm.nih.gov/geo/

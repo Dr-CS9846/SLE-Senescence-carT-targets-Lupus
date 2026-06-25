@@ -41,7 +41,7 @@ Final dataset composition:
 - GSE262856: 42 MRC5, direct senescence transcriptomics
 - GSE297723: 6 mouse, young vs. aged comparison
 
-**Total cohort**: 927 samples across 17 datasets
+**Total target cohort**: 19 datasets identified for integration. Currently, 3/19 (16%) successfully process, yielding senescence scores from 3 datasets.
 
 ---
 
