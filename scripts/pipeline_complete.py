@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-COMPLETE PIPELINE v7
+COMPLETE PIPELINE v8
 - Handles ALL file types: TSV, Excel, CSV, MTX sparse matrices
 - Auto-discovers nested directories
+- Combines multiple MTX samples (GSE163121, GSE266852)
 - 125-gene SenMayo panel for senescence scoring
 - Fallback scoring strategies
 """
@@ -41,11 +42,47 @@ MASTER_REGISTRY = {
 }
 
 def load_mtx_directory(folder_path):
-    """Load 10X Genomics MTX format from directory"""
+    """Load 10X Genomics MTX format from directory (handles single or multiple samples)"""
+    try:
+        # Check if this folder contains subdirectories with MTX files (like GSE163121_RAW)
+        subdirs = [d for d in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, d))]
+
+        # If subdirs exist and contain MTX files, process them all
+        mtx_subdirs = []
+        for subdir in subdirs:
+            subdir_path = os.path.join(folder_path, subdir)
+            if any('matrix.mtx' in f for f in os.listdir(subdir_path)):
+                mtx_subdirs.append(subdir_path)
+
+        if mtx_subdirs:
+            # Multiple samples - combine them
+            all_matrices = []
+            all_features = None
+
+            for mtx_dir in sorted(mtx_subdirs):
+                df_sample = load_single_mtx(mtx_dir)
+                if df_sample is not None:
+                    all_matrices.append(df_sample)
+                    if all_features is None:
+                        all_features = df_sample.columns.tolist()
+
+            if all_matrices:
+                # Concatenate all samples (stack rows)
+                combined = pd.concat(all_matrices, axis=0)
+                return combined
+            return None
+
+        # Single sample - process directly
+        return load_single_mtx(folder_path)
+
+    except Exception as e:
+        return None
+
+def load_single_mtx(folder_path):
+    """Load a single MTX sample from a folder"""
     try:
         files = os.listdir(folder_path)
 
-        # Find matrix, barcodes, features
         mtx_file = None
         barcodes_file = None
         features_file = None
