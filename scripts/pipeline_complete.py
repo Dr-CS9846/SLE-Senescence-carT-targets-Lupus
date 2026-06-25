@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-COMPLETE PIPELINE v6
+COMPLETE PIPELINE v7
 - Handles ALL file types: TSV, Excel, CSV, MTX sparse matrices
 - Auto-discovers nested directories
+- 125-gene SenMayo panel for senescence scoring
 - Fallback scoring strategies
 """
 
@@ -20,8 +21,7 @@ OUTPUT_PATH = 'data/external_validation'
 for cat in ['1_Bulk_Expansion', '2_scRNA_Expansion', '3_Tissue_Expansion', '4_Senescence_Validation']:
     os.makedirs(os.path.join(OUTPUT_PATH, cat), exist_ok=True)
 
-SENESCENCE_GENES = ['CDKN2A', 'CDKN1A', 'CDKN2B', 'TP53', 'RB1', 'E2F1',
-                     'IL6', 'TNF', 'CXCL8', 'MMP3', 'MMP9', 'SERPINE1', 'IGFBP7']
+SENESCENCE_GENES = pd.read_csv('data/senmayo_125genes.csv')['Gene'].tolist()
 
 MASTER_REGISTRY = {
     '1_Bulk_Expansion': {
