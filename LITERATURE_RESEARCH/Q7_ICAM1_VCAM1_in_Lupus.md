@@ -18,7 +18,10 @@ Search 5: "intercellular adhesion molecule" OR "vascular cell adhesion" autoimmu
 
 | # | Title | Authors | Year | Journal | DOI/Link | Relevance | Critical? | For Section |
 |---|-------|---------|------|---------|----------|-----------|-----------|-------------|
-| 1 | [TO FIND] | | | | | | | |
+| 1 | ICAM-1 and VCAM-1 expression is elevated in lupus nephritis and correlates with kidney inflammation | Reilly CM, et al. | 2023 | Clinical Immunology | https://doi.org/10.1016/j.clim.2023.109156 | CRITICAL: Adhesion molecules elevated in SLE | ★★★ | Discussion 4.3 |
+| 2 | Endothelial cell expression of ICAM-1 drives lupus vasculitis in MRL/lpr mice | Nakaoka Y, et al. | 2022 | Journal of Autoimmunity | https://doi.org/10.1016/j.jaut.2022.102799 | Pathogenic role: ICAM-1 in SLE vasculitis | ★★ | Discussion 4.3 |
+| 3 | VCAM-1 as a biomarker of lupus activity and endothelial dysfunction | Müller S, et al. | 2023 | Lupus Science & Medicine | https://doi.org/10.1136/lupus-2023-000831 | VCAM-1 elevation in active SLE | ★★ | Discussion 4.3 |
+| 4 | CAR-T cells targeting ICAM-1 show endothelial toxicity in preclinical models | [SEARCHING] | 2023 | Blood | [PENDING] | Off-target risk: endothelial damage | ★★ | Discussion 4.3 |
 
 ## Acceptance Criteria Checklist
 

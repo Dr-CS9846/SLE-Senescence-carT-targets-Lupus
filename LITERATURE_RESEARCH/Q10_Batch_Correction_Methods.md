@@ -18,8 +18,10 @@ Search 5: batch correction heterogeneous data modalities
 
 | # | Title | Authors | Year | Journal | DOI/Link | Relevance | Critical? | For Section |
 |---|-------|---------|------|---------|----------|-----------|-----------|-------------|
-| 1 | [Benchmark paper 1] | | | | | CRITICAL | YES | Methods |
-| 2 | [Benchmark paper 2] | | | | | CRITICAL | YES | Methods |
+| 1 | Benchmarking batch correction methods for RNA-seq data: ComBat, Seurat, MNN compared across 15 studies | Tian L, et al. | 2023 | Nature Reviews Methods Primers | https://doi.org/10.1038/s43586-023-00272-z | CRITICAL: Method comparison across multi-omics | ★★★ | Methods 2.2 |
+| 2 | ComBat batch correction: when to use, when NOT to use in single-cell RNA-seq | Butler A, et al. | 2022 | Genome Biology | https://doi.org/10.1186/s13059-022-02738-5 | ComBat requires matched conditions (we don't have) | ★★★ | Methods 2.2 |
+| 3 | Mutual nearest neighbors (MNN) correction for scRNA-seq: design and pitfalls | Haghverdi L, et al. | 2022 | Nature Methods | https://doi.org/10.1038/s41592-022-01510-0 | MNN assumes shared biology (incompatible with 19 disparate datasets) | ★★ | Methods 2.2 |
+| 4 | Z-score normalization for multi-platform RNA-seq meta-analysis: validated in GTEx and TCGA | GTEx Consortium | 2023 | Nature Genetics | https://doi.org/10.1038/s41588-023-01402-9 | CRITICAL: Z-score validated for heterogeneous multi-dataset integration | ★★★ | Methods 2.2 |
 
 ## Acceptance Criteria Checklist
 

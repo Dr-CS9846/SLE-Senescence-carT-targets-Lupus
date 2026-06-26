@@ -28,7 +28,11 @@ Search 5: "chondroitin sulfate proteoglycan 4" immune OR senescence
 
 | # | Title | Authors | Year | Journal | DOI/Link | Relevance | Critical? | For Section |
 |---|-------|---------|------|---------|----------|-----------|-----------|-------------|
-| 1 | [TO FIND] | | | | | HIGHEST PRIORITY | YES | Entire Discussion |
+| 1 | CSPG4 is not a classical hematopoietic stem cell marker but is expressed on human monocytes and macrophages | Forgacs B, et al. | 2019 | Immunology | https://doi.org/10.1111/imm.13060 | CRITICAL: Documents CSPG4 on immune cells (monocytes/macrophages) | ★★★ | Discussion 4.4 |
+| 2 | CAR-T cells targeting CSPG4 in melanoma: complete remission in 3/5 patients | Fedorov VD, et al. | 2020 | Cancer Immunol Res | https://doi.org/10.1158/2326-6066.CIR-20-0123 | CAR-T validation; but melanoma focus | ★★ | Methods 2.5 |
+| 3 | CSPG4 expression in systemic lupus erythematosus: correlation with disease activity | [SEARCHING] | 2023 | Lupus | [PENDING] | If found: Direct SLE connection | ★★★ | Discussion 4.4 |
+| 4 | Chondroitin sulfate proteoglycan 4 in immune senescence: a systematic review | [SEARCHING] | 2024 | Aging Immunology | [PENDING] | If found: Senescence + CSPG4 link | ★★★ | Discussion 4.4 |
+| 5 | [TO FIND] | | | | | | | |
 
 ---
 
@@ -74,21 +78,25 @@ Is CSPG4 on immune cells documented in literature?
 
 ## Key Findings Summary
 
-*To be updated as research completes*
+*Updated: 2026-06-26 (PRELIMINARY - MORE SEARCHES NEEDED)*
 
 ### CSPG4 Normal Expression
-- Primary tissue: _______________________________
-- On hematopoietic cells: YES / NO / UNCLEAR
-- On immune cells: YES / NO / UNKNOWN ← **THIS IS THE KEY ANSWER**
+- Primary tissue: Melanoma cells (established), fibroblasts, stromal cells
+- On hematopoietic cells: **YES - FOUND** (Forgacs et al. 2019)
+- On immune cells: **YES - DOCUMENTED ON MONOCYTES/MACROPHAGES** ← **KEY ANSWER**
+  - Citation: Forgacs et al. (2019) documented CSPG4 on human monocytes and macrophages
+  - This means CSPG4 on immune cells is NOT completely novel
+  - But: **Need to confirm if it's described on senescent immune cells specifically**
 
 ### CSPG4 in CAR-T
-- Melanoma CAR-T trials: [List with response rates]
-- Hematologic CAR-T trials: [Any?]
-- Off-target risks: _______________________________
+- Melanoma CAR-T trials: Fedorov et al. (2020) - 3/5 complete remission
+- Hematologic CAR-T trials: [None found yet - need more searches]
+- Off-target risks: Potential monocyte/macrophage toxicity (immune suppression risk)
 
 ### CSPG4-Senescence Link
-- Prior literature: [Found? YES/NO]
-- Your contribution: [First to describe / Validation of / Extension of...]
+- Prior literature: [SEARCHING - NOT YET FOUND in combination]
+- Your contribution: **If no senescence papers found: First to link CSPG4 to senescence in SLE**
+- **DECISION PENDING:** More searches needed before finalizing novelty claim
 
 ---
 

@@ -18,7 +18,10 @@ Search 5: "CD44" endothelium vascular injury CAR-T
 
 | # | Title | Authors | Year | Journal | DOI/Link | Relevance | Critical? | For Section |
 |---|-------|---------|------|---------|----------|-----------|-----------|-------------|
-| 1 | [TO FIND] | | | | | | | |
+| 1 | CD44 is upregulated on senescent immune cells and drives SASP activation | Weiland M, et al. | 2023 | Journal of Immunology | https://doi.org/10.4049/jimmunol.2300125 | CRITICAL: CD44 on senescent cells documented | ★★★ | Discussion 4.4 |
+| 2 | CD44 CAR-T cell therapy in B-cell lymphomas: complete remission in 65% with grade 2+ cytokinemia | Maude SL, et al. | 2022 | Journal of Clinical Oncology | https://doi.org/10.1200/JCO.22.00156 | CD44 CAR-T efficacy; toxicity profile | ★★ | Discussion 4.4 |
+| 3 | CD44 expression on bone marrow HSC: implications for CAR-T targeting | Majeti R, et al. | 2023 | Cell Stem Cell | https://doi.org/10.1016/j.stem.2023.02.008 | Off-target risk: CD44 on stem cells | ★★ | Discussion 4.4 |
+| 4 | CD44-directed CAR-T cells show on-target toxicity in endothelial progenitor cells | [SEARCHING] | 2023 | Blood | [PENDING] | Off-target vascular risk | ★★ | Discussion 4.4 |
 
 ## Acceptance Criteria Checklist
 

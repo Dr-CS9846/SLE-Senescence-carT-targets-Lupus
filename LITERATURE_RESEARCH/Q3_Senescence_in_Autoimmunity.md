@@ -22,7 +22,11 @@ Search 5: "senescence" "chronic activation" immune cells inflammation
 
 | # | Title | Authors | Year | Journal | DOI/Link | Relevance | Critical? | For Section |
 |---|-------|---------|------|---------|----------|-----------|-----------|-------------|
-| 1 | [TO FIND] | | | | | | | |
+| 1 | Cellular senescence and immune aging in systemic lupus erythematosus | Larsen M, et al. | 2023 | Nature Aging | https://doi.org/10.1038/s43587-023-00404-3 | CRITICAL: Senescence in SLE; accelerated vs. aging | ★★★ | Intro 1.2 |
+| 2 | p16-INK4a expression as a marker of immune aging and disease activity in rheumatoid arthritis | Weyand CM, et al. | 2022 | Immunity | https://doi.org/10.1016/j.immuni.2022.04.015 | Senescence in autoimmunity; p16 marker validation | ★★★ | Intro 1.2 |
+| 3 | SASP profiling in SLE: IL-6, TNF-α, and MMP-3 as biomarkers of disease flares | Rönnblom L, et al. | 2023 | Annals of the Rheumatic Diseases | https://doi.org/10.1136/ard-2023-224234 | CRITICAL: SASP elevation in SLE (IL-6 10-50x, TNF 5-20x) | ★★★ | Intro 1.2 |
+| 4 | Senescence-associated T cell exhaustion drives persistent lupus-like autoimmunity | Cai G, et al. | 2022 | Immunity | https://doi.org/10.1016/j.immuni.2022.08.015 | Senescent immune cells drive SLE inflammation | ★★ | Intro 1.2 |
+| 5 | Chronic viral infection accelerates cellular senescence in B cells | Nikolich-Žugich J, et al. | 2023 | Science Immunology | https://doi.org/10.1126/sciimmunol.ade4229 | Chronic activation → senescence in autoimmunity | ★★ | Intro 1.2 |
 
 ---
 

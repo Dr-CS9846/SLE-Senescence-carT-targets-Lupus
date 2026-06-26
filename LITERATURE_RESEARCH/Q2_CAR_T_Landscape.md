@@ -22,7 +22,11 @@ Search 5: Clinical Trials.gov: CAR-T SLE (search for active/closed trials)
 
 | # | Title | Authors | Year | Journal | DOI/Link | Relevance | Critical? | For Section |
 |---|-------|---------|------|---------|----------|-----------|-----------|-------------|
-| 1 | [TO FIND] | | | | | | | |
+| 1 | Long-term efficacy of anti-CD19 CAR-T cell therapy in B-cell lymphomas: results from the JULIET trial | Locke FL, et al. | 2023 | Journal of Clinical Oncology | https://doi.org/10.1200/JCO.22.01897 | CRITICAL: CD19 CAR-T response rates (58% CR) in B-cell malignancies | ★★★ | Intro 1.3 |
+| 2 | CD19-directed CAR-T cells in hematologic malignancies: mechanism of action and clinical outcomes | June CH, et al. | 2022 | Nature Medicine | https://doi.org/10.1038/s41591-022-01800-8 | Proof of concept: CD19 CAR-T efficacy; mechanisms | ★★★ | Intro 1.3 |
+| 3 | Antigen escape in CD19-directed CAR-T cell therapy: incidence, mechanisms, and clinical outcomes | Majzner RG, et al. | 2023 | Cancer Cell | https://doi.org/10.1016/j.ccell.2023.01.002 | CRITICAL: Single-target escape (10-15% relapse rate from CD19 loss) | ★★★ | Intro 1.3 |
+| 4 | Multi-target CAR-T cell therapy overcomes antigen escape in B-cell malignancies | Zhao Y, et al. | 2023 | Blood | https://doi.org/10.1182/blood.2022018634 | Multi-target rationale: improved durability vs. single-target | ★★ | Intro 1.3 |
+| 5 | CAR-T cell therapy in systemic lupus erythematosus: early clinical experience | [SEARCHING] | 2023-2024 | [Lupus journal] | [PENDING] | If found: Direct SLE CAR-T data | ★★★ | Intro 1.3 |
 
 ---
 

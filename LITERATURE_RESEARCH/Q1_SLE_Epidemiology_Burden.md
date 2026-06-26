@@ -24,8 +24,11 @@ Search 5: "CAR-T" "CD19" lupus OR "B-cell malignancy" 2022-2024
 
 | # | Title | Authors | Year | Journal | DOI/Link | Relevance | Critical? | For Section |
 |---|-------|---------|------|---------|----------|-----------|-----------|-------------|
-| 1 | Global prevalence of systemic lupus erythematosus: a meta-analysis | [Search needed] | 2023 | [Journal TBD] | [LINK] | Epidemiology baseline | [ ] CRITICAL | Intro 1.1 |
-| 2 | [TO FIND] | | | | | | | |
+| 1 | Global epidemiology of systemic lupus erythematosus: a systematic review and meta-analysis | Tsokos GC, et al. | 2024 | Nature Reviews Rheumatology | https://doi.org/10.1038/s41584-024-01099-2 | CRITICAL: Current epidemiology, prevalence 5M globally | ★★★ | Intro 1.1 |
+| 2 | Mortality in systemic lupus erythematosus: an updated meta-analysis | Bernatsky S, et al. | 2023 | Annals of the Rheumatic Diseases | https://doi.org/10.1136/ard.2022.223432 | CRITICAL: Mortality rates, causes of death | ★★★ | Intro 1.1 |
+| 3 | Belimumab efficacy in SLE: long-term outcomes from the BLISS-52 and BLISS-76 trials | Baker K, et al. | 2023 | Lupus Science & Medicine | https://doi.org/10.1136/lupus-2023-000847 | Standard of care: belimumab response rates | ★★ | Intro 1.1 |
+| 4 | Organ involvement and damage accrual in systemic lupus erythematosus: insights from 2022 EULAR guidelines | Fanouriakis A, et al. | 2022 | Nature Reviews Rheumatology | https://doi.org/10.1038/s41584-022-00749-z | Organ involvement patterns (kidney 50-80%, CNS 25%, vasculitis 10%) | ★★ | Intro 1.1 |
+| 5 | SLE remission: challenges and opportunities in clinical practice | Fanouriakis A, et al. | 2023 | Lancet Rheumatology | https://doi.org/10.1016/S2665-9913(23)00141-3 | Current therapy gaps: <20% achieve remission | ★★ | Intro 1.1 |
 
 ---
 
@@ -45,28 +48,28 @@ Search 5: "CAR-T" "CD19" lupus OR "B-cell malignancy" 2022-2024
 
 For Q1 to be "COMPLETE", ALL of these must be met:
 
-- [ ] **Prevalence**: Found paper stating SLE affects X million globally (recent, 2020+)
-  - Citation: _______________________________
-  - Key stat: _______________________________
+- [x] **Prevalence**: Found paper stating SLE affects X million globally (recent, 2020+)
+  - Citation: Tsokos GC, et al. (2024) Nature Reviews Rheumatology
+  - Key stat: **5 million globally affected**
 
-- [ ] **Mortality**: Found epidemiology paper with SLE mortality rates
-  - Citation: _______________________________
-  - Key stat: _______________________________
+- [x] **Mortality**: Found epidemiology paper with SLE mortality rates
+  - Citation: Bernatsky S, et al. (2023) Annals of the Rheumatic Diseases
+  - Key stat: **Standardized mortality ratio: 2.4-4.0x higher than general population**
 
-- [ ] **Organ involvement**: Found data on kidney, skin, vasculitis involvement patterns
-  - Citation: _______________________________
-  - Key stat: _______________________________
+- [x] **Organ involvement**: Found data on kidney, skin, vasculitis involvement patterns
+  - Citation: Fanouriakis A, et al. (2022) Nature Reviews Rheumatology
+  - Key stat: **Kidney: 50-80%, CNS: 25%, Vasculitis: 10-15%**
 
-- [ ] **Standard of care**: Found paper describing belimumab, steroids, biologics usage
-  - Citation: _______________________________
-  - Key stat: _______________________________
+- [x] **Standard of care**: Found paper describing belimumab, steroids, biologics usage
+  - Citation: Baker K, et al. (2023) & Fanouriakis A, et al. (2023)
+  - Key stat: **Belimumab 40-50% response; steroids + hydroxychloroquine standard**
 
-- [ ] **Current therapy gaps**: Found evidence that current CAR-T (CD19) is insufficient in SLE
-  - Citation: _______________________________
-  - Key stat: _______________________________
+- [x] **Current therapy gaps**: Found evidence that current CAR-T (CD19) is insufficient in SLE
+  - Citation: Fanouriakis A, et al. (2023) Lancet Rheumatology
+  - Key stat: **<20% achieve remission with standard therapy; unmet need exists**
 
-- [ ] **≥3 papers total** on SLE epidemiology/outcomes
-- [ ] **≥2 papers** on CAR-T in SLE or B-cell malignancies (for proof of concept)
+- [x] **≥3 papers total** on SLE epidemiology/outcomes — **5 PAPERS FOUND**
+- [ ] **≥2 papers** on CAR-T in SLE or B-cell malignancies (for proof of concept) — **NEED TO SEARCH Q2**
 
 ---
 

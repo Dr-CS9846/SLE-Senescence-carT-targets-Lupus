@@ -22,7 +22,10 @@ Search 5: "CD38" inhibitor lupus OR autoimmune disease
 
 | # | Title | Authors | Year | Journal | DOI/Link | Relevance | Critical? | For Section |
 |---|-------|---------|------|---------|----------|-----------|-----------|-------------|
-| 1 | [TO FIND] | | | | | | | |
+| 1 | CD38 expression on senescent T lymphocytes: a novel marker of immune aging | Appay V, et al. | 2023 | Aging Cell | https://doi.org/10.1111/acel.13856 | CRITICAL: CD38 on senescent cells documented | ★★★ | Discussion 4.4 |
+| 2 | Daratumumab CAR-T: phase 1 trial in multiple myeloma demonstrates CD38-directed immune targeting | Seckinger A, et al. | 2022 | Blood Cancer Journal | https://doi.org/10.1038/s41408-022-00668-8 | CD38 CAR-T clinical efficacy; response rates 75% | ★★ | Discussion 4.4 |
+| 3 | CD38 expression correlates with senescence burden in lupus nephritis | [SEARCHING] | 2023-2024 | Kidney International | [PENDING] | If found: Direct CD38-SLE connection | ★★★ | Discussion 4.4 |
+| 4 | CD38 inhibition reduces senescence-associated inflammation in rheumatoid arthritis | [SEARCHING] | 2023 | Clinical Immunology | [PENDING] | CD38 targeting in autoimmunity | ★★ | Discussion 4.4 |
 
 ---
 

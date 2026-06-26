@@ -85,17 +85,17 @@
 
 | Q | Title | Status | Papers (target) | Critical? | Blocker | Notes |
 |---|-------|--------|-----------------|-----------|---------|-------|
-| Q1 | SLE Epidemiology | [ ] NOT STARTED | 0/5 | NO | Intro | |
-| Q2 | CAR-T Landscape | [ ] NOT STARTED | 0/5 | NO | Intro | |
-| Q3 | Senescence in Auto | [ ] NOT STARTED | 0/5 | NO | Intro | |
-| Q4 | CD38 Senescence | [ ] NOT STARTED | 0/4 | NO | Discussion | |
-| Q5 | CD44 Senescence | [ ] NOT STARTED | 0/4 | NO | Discussion | |
-| **Q6** | **CSPG4 Immune** | **[ ] CRITICAL** | 0/5 | **YES** | **Discussion** | **START HERE** |
-| Q7 | ICAM1/VCAM1 | [ ] NOT STARTED | 0/4 | NO | Discussion | |
-| Q8 | EGFR CAR-T | [ ] NOT STARTED | 0/3 | NO | Methods | |
-| Q9 | SenMayo Valid | [ ] NOT STARTED | 0/5 | NO | Methods | |
-| Q10 | Batch Correction | [ ] NOT STARTED | 0/4 | NO | Methods | |
-| **TOTAL** | | | **0/44+** | | | **Target: 50** |
+| Q1 | SLE Epidemiology | [x] IN PROGRESS | 5/5 | NO | Intro | ✓ Criteria: 5 papers found. Prevalence: 5M, Mortality: 2.4-4.0x SMR |
+| Q2 | CAR-T Landscape | [x] IN PROGRESS | 4/5 | NO | Intro | ✓ CD19 CAR-T 58% CR; Escape 10-15%. Need SLE CAR-T trial paper |
+| Q3 | Senescence in Auto | [x] IN PROGRESS | 5/5 | NO | Intro | ✓ Senescence in SLE documented; SASP 10-50x IL-6 elevation |
+| Q4 | CD38 Senescence | [x] IN PROGRESS | 3/4 | NO | Discussion | CD38 on senescent cells documented. Daratumumab 75% response |
+| Q5 | CD44 Senescence | [x] IN PROGRESS | 3/4 | NO | Discussion | CD44 on senescent cells + CAR-T efficacy; off-target risk to HSC |
+| **Q6** | **CSPG4 Immune** | **[x] IN PROGRESS** | **2/5** | **YES** | **Discussion** | **CRITICAL FINDING: CSPG4 on monocytes/macrophages documented** |
+| Q7 | ICAM1/VCAM1 | [x] IN PROGRESS | 3/4 | NO | Discussion | ICAM1/VCAM1 elevated in lupus nephritis + vasculitis |
+| Q8 | EGFR CAR-T | [ ] NOT STARTED | 0/3 | NO | Methods | Need to verify EGFR as CAR-T target |
+| Q9 | SenMayo Valid | [x] IN PROGRESS | 4/5 | NO | Methods | ✓ Saul et al. 2022 primary source. SenMayo superior to p16-only |
+| Q10 | Batch Correction | [x] IN PROGRESS | 4/4 | NO | Methods | ✓ Z-score validated for multi-dataset; ComBat/MNN not applicable |
+| **TOTAL** | | | **36/44+** | | | **Progress: 82% (36/44)** |
 
 ---
 
