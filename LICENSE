@@ -24,12 +24,9 @@ SOFTWARE.
 
 Data License:
 
-The processed datasets (in processed_data/) are derived from publicly available
-Gene Expression Omnibus (GEO) datasets and are made available under the
-Creative Commons Attribution 4.0 International (CC-BY-4.0) license.
+The processed results are derived from publicly available Gene Expression
+Omnibus (GEO) datasets and are made available under the Creative Commons
+Attribution 4.0 International (CC-BY-4.0) license.
 
-When using these datasets, please cite the original GEO studies:
-- GSE318067: Ward JM et al., NIEHS
-- GSE162577: Deng Y et al.
-- GSE142016: Mistry P et al., NIH/NAMS
-- GSE36700: synovial tissue studies
+When using these results, please cite the original GEO studies. All 19
+dataset accessions are listed in DATA_MANIFEST.md.
