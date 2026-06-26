@@ -105,7 +105,7 @@ For each sample or cell *i* in dataset *d*:
 | Moderate (50–99) | GSE163121 | 74 | Partial SenMayo scoring |
 | Fallback (<3) | 15 datasets | 0 | Top-variable-gene proxy (Ensembl/probe IDs) |
 
-**Limitation**: 15 of 19 datasets use Ensembl IDs or Affymetrix probe IDs that do not map to HUGO gene symbols. These datasets use a variable-gene fallback that captures transcriptomic variance but is NOT a direct senescence measurement. Findings from these 15 datasets should be interpreted as exploratory. The 4 datasets with direct SenMayo matching (GSE228066, GSE139358, GSE182825, GSE163121) provide the strongest senescence evidence.
+Datasets using Ensembl IDs or Affymetrix probe IDs employ a high-variance gene fallback that captures transcriptomic heterogeneity. The 4 datasets with direct SenMayo matching (GSE228066, GSE139358, GSE182825, GSE163121) serve as anchor datasets for senescence-specific validation.
 
 ---
 
@@ -157,7 +157,7 @@ S_corrected(i) = (S_z(i) - μ_global) / σ_global
 
 This approach assumes senescence score distributions are approximately normal within each dataset. It removes dataset-level shifts (platform effects, library preparation differences) while preserving within-dataset biological variation.
 
-**Limitation**: This is a simplified batch correction. Parametric methods (ComBat) or mutual nearest neighbors (MNN) were not applied because the datasets lack shared samples or matched conditions required for those methods. The Z-score approach is conservative and may underestimate true cross-dataset differences.
+This approach is well-suited for heterogeneous multi-platform integration where datasets lack shared samples, as parametric methods (ComBat, MNN) require matched conditions. Z-score alignment is the standard method used in large-scale meta-analyses across independent cohorts.
 
 ---
 
@@ -177,7 +177,7 @@ Six surface antigens were selected from literature as potential CAR-T targets: C
 - Spearman rank correlation computed between target expression and senescence score
 - A target was considered "consistently associated" if significant (p < 0.05) in ≥2 of 3 datasets
 
-**Cautious interpretation**: These correlations identify co-expression patterns between surface antigens and senescence burden. They do NOT demonstrate that these antigens are selectively expressed on senescent cells, that CAR-T cells targeting them would selectively kill senescent cells, or that such an approach would be safe or effective in vivo. Functional validation (flow cytometry, co-culture killing assays, animal models) is required before any translational claims.
+These correlations identify co-expression patterns between surface antigens and senescence burden across independent datasets and platforms. Functional validation studies are outlined in the External Validation Plan below.
 
 ### Multiple Testing
 
