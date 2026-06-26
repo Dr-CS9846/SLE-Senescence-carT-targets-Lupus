@@ -49,3 +49,8 @@ pipeline_output.txt
 .docx
 create_docx.py
 ~$*
+
+# Manuscript drafts (for local working, submitted after acceptance only)
+*_DRAFT.md
+SUBMISSION_READY_SUMMARY.md
+ABSTRACT_KEYWORDS_DECLARATIONS.md
