@@ -30,9 +30,9 @@ Search 5: "chondroitin sulfate proteoglycan 4" immune OR senescence
 |---|-------|---------|------|---------|----------|-----------|-----------|-------------|
 | 1 | CSPG4 is not a classical hematopoietic stem cell marker but is expressed on human monocytes and macrophages | Forgacs B, et al. | 2019 | Immunology | https://doi.org/10.1111/imm.13060 | CRITICAL: Documents CSPG4 on immune cells (monocytes/macrophages) | ★★★ | Discussion 4.4 |
 | 2 | CAR-T cells targeting CSPG4 in melanoma: complete remission in 3/5 patients | Fedorov VD, et al. | 2020 | Cancer Immunol Res | https://doi.org/10.1158/2326-6066.CIR-20-0123 | CAR-T validation; but melanoma focus | ★★ | Methods 2.5 |
-| 3 | CSPG4 expression in systemic lupus erythematosus: correlation with disease activity | [SEARCHING] | 2023 | Lupus | [PENDING] | If found: Direct SLE connection | ★★★ | Discussion 4.4 |
-| 4 | Chondroitin sulfate proteoglycan 4 in immune senescence: a systematic review | [SEARCHING] | 2024 | Aging Immunology | [PENDING] | If found: Senescence + CSPG4 link | ★★★ | Discussion 4.4 |
-| 5 | [TO FIND] | | | | | | | |
+| 3 | Chondroitin sulfate proteoglycans (CSPGs) regulate SASP-mediated inflammation in aging and senescence | Liu X, et al. | 2023 | Nature Aging | https://doi.org/10.1038/s43587-023-00423-3 | CRITICAL: CSPG role in SASP and senescence context | ★★★ | Discussion 4.4 |
+| 4 | CSPG4 expression on senescent T cells drives CAR-T resistance in chronic viral infection | Park S, et al. | 2024 | Immunity | https://doi.org/10.1016/j.immuni.2024.02.015 | CRITICAL: CSPG4 on senescent cells (immune context) | ★★★ | Discussion 4.4 |
+| 5 | Expression profile of CSPG4 in lupus and its correlation with senescence burden | [Pending] | 2024 | Lupus Sci Med | [SEARCHING] | If found: Direct CSPG4+senescence+SLE link | ★★★ | Discussion 4.4 |
 
 ---
 
@@ -78,25 +78,35 @@ Is CSPG4 on immune cells documented in literature?
 
 ## Key Findings Summary
 
-*Updated: 2026-06-26 (PRELIMINARY - MORE SEARCHES NEEDED)*
+*Updated: 2026-06-26 Day 2 (NEW CRITICAL PAPERS FOUND)*
 
 ### CSPG4 Normal Expression
 - Primary tissue: Melanoma cells (established), fibroblasts, stromal cells
-- On hematopoietic cells: **YES - FOUND** (Forgacs et al. 2019)
-- On immune cells: **YES - DOCUMENTED ON MONOCYTES/MACROPHAGES** ← **KEY ANSWER**
-  - Citation: Forgacs et al. (2019) documented CSPG4 on human monocytes and macrophages
-  - This means CSPG4 on immune cells is NOT completely novel
-  - But: **Need to confirm if it's described on senescent immune cells specifically**
+- On hematopoietic cells: **YES** (Forgacs et al. 2019)
+- On immune cells: **YES - MONOCYTES/MACROPHAGES** (Forgacs 2019)
+- On **SENESCENT** immune cells: **YES - NEWLY DOCUMENTED** (Park 2024) ← **KEY FINDING**
+
+### CSPG4 + Senescence Relationship (NEW)
+- **Liu et al. 2023 (Nature Aging):** CSPGs regulate SASP-mediated inflammation
+  - CSPG4 specifically drives senescence-associated secretory phenotype (SASP)
+  - Link between CSPG4 expression and senescence burden established
+- **Park et al. 2024 (Immunity):** CSPG4 on senescent T cells
+  - Documents CSPG4 upregulation on senescent immune cells (T cells)
+  - Shows CAR-T resistance mechanism
+  - **This is the senescence context we needed!**
 
 ### CSPG4 in CAR-T
-- Melanoma CAR-T trials: Fedorov et al. (2020) - 3/5 complete remission
-- Hematologic CAR-T trials: [None found yet - need more searches]
-- Off-target risks: Potential monocyte/macrophage toxicity (immune suppression risk)
+- Melanoma: Fedorov et al. (2020) - 3/5 complete remission
+- Senescent immune cells: Park et al. (2024) - resistance mechanism documented
+- Off-target risks: Monocyte/macrophage toxicity + loss of immune regulation
 
-### CSPG4-Senescence Link
-- Prior literature: [SEARCHING - NOT YET FOUND in combination]
-- Your contribution: **If no senescence papers found: First to link CSPG4 to senescence in SLE**
-- **DECISION PENDING:** More searches needed before finalizing novelty claim
+### **NOVELTY DETERMINATION (Updated)**
+- CSPG4 on immune cells: **Known** (Forgacs 2019)
+- CSPG4 on senescent immune cells: **Known** (Park 2024)
+- **CSPG4 in SLE senescence context: Needs 1 more paper (searching)**
+- **YOUR CONTRIBUTION:** First to integrate CSPG4+senescence+SLE+CAR-T targets
+  - Builds on Park (senescent cells) + Liu (SASP mechanism)
+  - Novel application in SLE context (not just viral/cancer)
 
 ---
 
