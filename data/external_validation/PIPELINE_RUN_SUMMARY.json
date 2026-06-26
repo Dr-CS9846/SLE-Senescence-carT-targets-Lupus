@@ -1,0 +1,47 @@
+{
+  "pipeline_version": "v9",
+  "run_date": "2026-06-26 10:58:42",
+  "senmayo_genes": 125,
+  "scrna_qc": {
+    "min_genes_per_cell": 200,
+    "min_cells_per_gene": 3,
+    "max_mito_fraction": 0.2
+  },
+  "batch_correction": "z-score global re-centering",
+  "datasets_processed": 19,
+  "datasets_total": 22,
+  "total_samples": 2919,
+  "runtime_seconds": 308.2,
+  "results": {
+    "1_Bulk_Expansion": {
+      "GSE112087": "SUCCESS",
+      "GSE122459": "SUCCESS",
+      "GSE181500": "LOAD_FAILED",
+      "GSE228066": "SUCCESS",
+      "GSE72509": "SUCCESS"
+    },
+    "2_scRNA_Expansion": {
+      "GSE135779": "SUCCESS",
+      "GSE139358": "SUCCESS",
+      "GSE162577": "SUCCESS",
+      "GSE163121_RAW": "SUCCESS",
+      "GSE179633": "SUCCESS",
+      "GSE266852_OES19443150_matrix.mtx": "SUCCESS"
+    },
+    "3_Tissue_Expansion": {
+      "GSE155405": "SUCCESS",
+      "GSE174188": "SUCCESS",
+      "GSE182825": "SUCCESS",
+      "GSE200306": "SUCCESS",
+      "GSE294496": "SUCCESS",
+      "GSE36700": "SUCCESS"
+    },
+    "4_Senescence_Validation": {
+      "GSE101766": "SUCCESS",
+      "GSE157007": "NOT_FOUND",
+      "GSE226598": "NOT_FOUND",
+      "GSE262856": "SUCCESS",
+      "GSE297723": "SUCCESS"
+    }
+  }
+}

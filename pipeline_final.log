@@ -1,5 +1,8 @@
 ======================================================================
-COMPLETE PIPELINE v6 - ALL 21 DATASETS
+SLE Senescence Scoring Pipeline v9
+SenMayo panel: 125 genes
+scRNA QC: min_genes=200, min_cells=3, max_mito=0.2
+Started: 2026-06-26 10:58:42
 ======================================================================
 
 ======================================================================
@@ -7,75 +10,164 @@ PROCESSING
 ======================================================================
 
 [1_Bulk_Expansion]
-  GSE112087:     GSE112087_counts-matrix-EnsembIDs-GRCh37.p10.txt ... EMPTY
-    GSE112087_counts-matrix-EnsembIDs-GRCh37.p10.txt ... OK (62069 genes x 120 samples)
-[SUCCESS]
-  GSE122459:     GSE122459_normalized_genes_all_samples.xlsx ... EMPTY
-    GSE122459_normalized_genes_all_samples.xlsx ... OK (62069 genes x 27 samples)
-[SUCCESS]
-  GSE181500:     GSE181500_RAW ... EMPTY
-[LOAD_FAILED]
-  GSE228066:     GSE228066_gene.xlsx ... OK (17826 genes x 45 samples)
-[SUCCESS]
-  GSE72509:     GSE72509_SLE_RPKMs.txt ... EMPTY
-    GSE72509_SLE_RPKMs.txt ... OK (26456 genes x 122 samples)
-[SUCCESS]
+  GSE112087:
+    GSE112087_counts-matrix-EnsembIDs-GRCh37.p10.txt ...
+      -> EMPTY
+    GSE112087_counts-matrix-EnsembIDs-GRCh37.p10.txt ...
+      -> Loaded: 62069 x 120
+      -> Scored: 120 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (120 samples)
+  GSE122459:
+    GSE122459_normalized_genes_all_samples.xlsx ...
+      -> EMPTY
+    GSE122459_normalized_genes_all_samples.xlsx ...
+      -> Loaded: 62069 x 27
+      -> Scored: 27 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (27 samples)
+  GSE181500:
+    GSE181500_RAW ...
+      -> EMPTY
+  -> [LOAD_FAILED]
+  GSE228066:
+    GSE228066_gene.xlsx ...
+      -> Loaded: 17826 x 45
+      -> Scored: 45 samples, 108/125 SenMayo genes matched
+  -> [SUCCESS] (45 samples)
+  GSE72509:
+    GSE72509_SLE_RPKMs.txt ...
+      -> EMPTY
+    GSE72509_SLE_RPKMs.txt ...
+      -> Loaded: 26456 x 122
+      -> Scored: 122 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (122 samples)
 
 [2_scRNA_Expansion]
-  GSE135779:     GSE135779_genes.tsv ... EMPTY
-    GSE135779_genes.tsv ... NO DATA
-    GSE135779_series_matrix.txt ... EMPTY
-    GSE135779_series_matrix.txt ... OK (4 genes x 56 samples)
-[SUCCESS]
-  GSE139358:     GSE139358_RNA-Seq_gene_rpkm_18_samples.xlsx ... OK (26184 genes x 18 samples)
-[SUCCESS]
-  GSE162577:     GSE162577_RAW ... EMPTY
-    GSE162577_series_matrix.txt ... OK (4 genes x 3 samples)
-[SUCCESS]
-  GSE163121_RAW:     GSE163121_RAW ... OK (1000 genes x 33693 samples)
-[SUCCESS]
-  GSE179633:     GSE179633_family.soft ... EMPTY
-    GSE179633_family.soft ... NO DATA
-    GSE179633_family.xml ... EMPTY
-    GSE179633_family.xml ... NO DATA
-    GSE179633_series_matrix.txt ... EMPTY
-    GSE179633_series_matrix.txt ... OK (4 genes x 30 samples)
-[SUCCESS]
-  GSE266852_OES19443150_matrix.mtx:     GSE266852_OES19443150_matrix.mtx ... OK (1000 genes x 33537 samples)
-[SUCCESS]
+  GSE135779:
+    GSE135779_genes.tsv ...
+      -> EMPTY
+    GSE135779_genes.tsv ...
+      -> NO DATA
+    GSE135779_series_matrix.txt ...
+      -> EMPTY
+    GSE135779_series_matrix.txt ...
+      -> Loaded: 4 x 56
+      -> Scored: 56 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (56 samples)
+  GSE139358:
+    GSE139358_RNA-Seq_gene_rpkm_18_samples.xlsx ...
+      -> Loaded: 26184 x 18
+      -> Scored: 18 samples, 116/125 SenMayo genes matched
+  -> [SUCCESS] (18 samples)
+  GSE162577:
+    GSE162577_RAW ...
+      -> EMPTY
+    GSE162577_series_matrix.txt ...
+      -> Loaded: 4 x 3
+      -> Scored: 3 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (3 samples)
+  GSE163121_RAW:
+    GSE163121_RAW ...
+      -> Loaded: 1000 x 33694
+    QC: 1000 -> 997 cells, 33694 -> 12201 genes
+      -> Scored: 997 samples, 74/125 SenMayo genes matched
+  -> [SUCCESS] (997 samples)
+  GSE179633:
+    GSE179633_family.soft ...
+      -> EMPTY
+    GSE179633_family.soft ...
+      -> NO DATA
+    GSE179633_family.xml ...
+      -> EMPTY
+    GSE179633_family.xml ...
+      -> NO DATA
+    GSE179633_series_matrix.txt ...
+      -> EMPTY
+    GSE179633_series_matrix.txt ...
+      -> Loaded: 4 x 30
+      -> Scored: 30 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (30 samples)
+  GSE266852_OES19443150_matrix.mtx:
+    GSE266852_OES19443150_matrix.mtx ...
+      -> Loaded: 1000 x 33538
+    QC: 1000 -> 995 cells, 33538 -> 14189 genes
+      -> Scored: 995 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (995 samples)
 
 [3_Tissue_Expansion]
-  GSE155405:     GSE155405_GEN141016_F_Profiling_table.xlsx ... NO DATA
-    GSE155405_deseq_out_counts.tab ... EMPTY
-    GSE155405_deseq_out_counts.tab ... OK (13982 genes x 13 samples)
-[SUCCESS]
-  GSE174188:     GSE174188_series_matrix.txt ... EMPTY
-    GSE174188_series_matrix.txt ... OK (4 genes x 88 samples)
-[SUCCESS]
-  GSE182825:     GSE182825_Analyzed_Counts.txt ... EMPTY
-    GSE182825_Analyzed_Counts.txt ... OK (18504 genes x 41 samples)
-[SUCCESS]
-  GSE200306:     GSE200306_Nanostring_RAW_1-21.xlsx ... OK (616 genes x 13 samples)
-[SUCCESS]
-  GSE294496:     GSE294496_RAW ... EMPTY
-    GSE294496_series_matrix.txt ... EMPTY
-    GSE294496_series_matrix.txt ... OK (4 genes x 2 samples)
-[SUCCESS]
-  GSE36700:     GSE36700_RAW ... EMPTY
-    GSE36700_series_matrix.txt ... OK (54680 genes x 25 samples)
-[SUCCESS]
+  GSE155405:
+    GSE155405_GEN141016_F_Profiling_table.xlsx ...
+      -> NO DATA
+    GSE155405_deseq_out_counts.tab ...
+      -> EMPTY
+    GSE155405_deseq_out_counts.tab ...
+      -> Loaded: 13982 x 13
+      -> Scored: 13 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (13 samples)
+  GSE174188:
+    GSE174188_series_matrix.txt ...
+      -> EMPTY
+    GSE174188_series_matrix.txt ...
+      -> Loaded: 4 x 88
+      -> Scored: 88 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (88 samples)
+  GSE182825:
+    GSE182825_Analyzed_Counts.txt ...
+      -> EMPTY
+    GSE182825_Analyzed_Counts.txt ...
+      -> Loaded: 18504 x 41
+      -> Scored: 41 samples, 113/125 SenMayo genes matched
+  -> [SUCCESS] (41 samples)
+  GSE200306:
+    GSE200306_Nanostring_RAW_1-21.xlsx ...
+      -> Loaded: 616 x 13
+      -> Scored: 13 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (13 samples)
+  GSE294496:
+    GSE294496_RAW ...
+      -> EMPTY
+    GSE294496_series_matrix.txt ...
+      -> EMPTY
+    GSE294496_series_matrix.txt ...
+      -> Loaded: 4 x 2
+      -> Scored: 2 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (2 samples)
+  GSE36700:
+    GSE36700_RAW ...
+      -> EMPTY
+    GSE36700_series_matrix.txt ...
+      -> Loaded: 54680 x 25
+      -> Scored: 25 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (25 samples)
 
 [4_Senescence_Validation]
-  GSE101766:     GSE101766_Set2_Readcounts.xlsx ... OK (47565 genes x 276 samples)
-[SUCCESS]
-  GSE157007: [NOT_FOUND]
-  GSE226598: [NOT_FOUND]
-  GSE262856:     GSE262856_MRC5_Senescence_Transcriptomics.txt ... EMPTY
-    GSE262856_MRC5_Senescence_Transcriptomics.txt ... OK (18974 genes x 42 samples)
-[SUCCESS]
-  GSE297723:     GSE297723_raw_counts.csv ... EMPTY
-    GSE297723_raw_counts.csv ... OK (49315 genes x 6 samples)
-[SUCCESS]
+  GSE101766:
+    GSE101766_Set2_Readcounts.xlsx ...
+      -> Loaded: 47565 x 276
+      -> Scored: 276 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (276 samples)
+  GSE157007:
+  -> [NOT_FOUND]
+  GSE226598:
+  -> [NOT_FOUND]
+  GSE262856:
+    GSE262856_MRC5_Senescence_Transcriptomics.txt ...
+      -> EMPTY
+    GSE262856_MRC5_Senescence_Transcriptomics.txt ...
+      -> Loaded: 18974 x 42
+      -> Scored: 42 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (42 samples)
+  GSE297723:
+    GSE297723_raw_counts.csv ...
+      -> EMPTY
+    GSE297723_raw_counts.csv ...
+      -> Loaded: 49315 x 6
+      -> Scored: 6 samples, 0/125 SenMayo genes matched
+  -> [SUCCESS] (6 samples)
+
+======================================================================
+BATCH CORRECTION
+======================================================================
+Batch-corrected 19 datasets to common scale
 
 ======================================================================
 FINAL SUMMARY
@@ -86,4 +178,7 @@ FINAL SUMMARY
 4_Senescence_Validation: 3/5
 
 TOTAL: 19/22 SUCCESS
+Total samples/cells scored: 2919
+SenMayo genes used: 125
+Runtime: 308.2s
 Results: data/external_validation
