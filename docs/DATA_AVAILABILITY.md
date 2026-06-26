@@ -2,7 +2,7 @@
 
 ## Important: Raw GEO Data Not Included in Repository
 
-This repository contains **analysis scripts and processed results** but **NOT the raw GEO datasets** (~180 GB). Raw RNA-seq files cannot be committed to GitHub due to storage constraints. Instead, they must be downloaded independently from the Gene Expression Omnibus (GEO) database before running the pipeline.
+This repository contains analysis scripts and processed results but not the raw GEO datasets (~2.5 GB). Raw data files must be downloaded independently from GEO before running the pipeline.
 
 ---
 

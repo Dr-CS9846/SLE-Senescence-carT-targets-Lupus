@@ -93,15 +93,16 @@ Full methods: [docs/METHODS.md](docs/METHODS.md)
 ## Repository Structure
 
 ```
-scripts/pipeline_complete.py     # Sole analysis pipeline (125-gene SenMayo)
+scripts/pipeline_complete.py     # Senescence scoring pipeline (125-gene SenMayo)
+scripts/analyze_results.py       # Downstream statistical analysis and figures
 data/senmayo_125genes.csv        # 125-gene SenMayo panel
 data/external_validation/        # Per-dataset senescence scores (CSV)
+results/figures/                 # Publication figures (8 multi-panel)
+results/tables/                  # Statistical tables (CSV)
 docs/METHODS.md                  # Detailed methods
 docs/RESULTS.md                  # Key findings
 docs/DATA_AVAILABILITY.md        # Dataset download instructions
-docs/EXTERNAL_VALIDATION.md      # Validation approach
-docs/FIGURES.md                  # Figure specifications
-pipeline_final.log               # Most recent pipeline execution log
+pipeline_final.log               # Pipeline execution log
 ```
 
 ## Citation

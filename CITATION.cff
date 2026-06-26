@@ -1,22 +1,20 @@
 cff-version: 1.2.0
-title: Multi-omics integration pipeline for SLE senescence analysis
+title: Senescence signatures and CAR-T targets in systemic lupus erythematosus
 authors:
   - family-names: Gondal
     given-names: Zeshan
     email: 011april2025@gmail.com
 abstract: |
-  Multi-omics analysis identifying senescence-associated immune cell populations
-  and novel CAR-T target antigens in systemic lupus erythematosus. Integrates
-  single-cell RNA-seq, bulk transcriptomics, and two independent proteomics
-  platforms to characterize senescence signatures and prioritize CAR-T targets.
+  Multi-dataset transcriptomic analysis applying the SenMayo 125-gene senescence
+  signature across 19 public GEO datasets in SLE. Identifies senescence-associated
+  surface antigens (CD38, CD44, CSPG4) as candidate targets for further investigation.
 keywords:
   - systemic lupus erythematosus
   - cellular senescence
   - CAR-T immunotherapy
-  - multi-omics
-  - single-cell RNA-seq
-  - proteomics
+  - SenMayo
+  - multi-dataset integration
 license: MIT
 version: 1.0.0
-date-released: "2026-06-25"
-url: "https://github.com/Dr-CS9846/sle-senescence-cart-targets"
+date-released: "2026-06-26"
+url: "https://github.com/Dr-CS9846/SLE-Senescence-carT-targets-Lupus"
