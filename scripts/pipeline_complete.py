@@ -122,7 +122,12 @@ def load_single_mtx(folder_path):
         else:
             features = [f"Gene_{i}" for i in range(matrix.shape[1])]
 
-        df = pd.DataFrame(matrix.toarray(), columns=features, index=barcodes)
+        # Cap to first 1000 cells to avoid memory issues
+        max_cells = min(1000, matrix.shape[0])
+        matrix_subset = matrix[:max_cells, :].toarray()
+        barcodes_subset = barcodes[:max_cells]
+
+        df = pd.DataFrame(matrix_subset, columns=features, index=barcodes_subset)
         return df
 
     except Exception as e:
