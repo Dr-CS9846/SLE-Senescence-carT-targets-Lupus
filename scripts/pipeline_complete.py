@@ -45,7 +45,7 @@ MAX_MITO_FRACTION = 0.20
 
 MASTER_REGISTRY = {
     '1_Bulk_Expansion': {
-        'GSE72509': [], 'GSE112087': [], 'GSE181500': [], 'GSE228066': [], 'GSE122459': [],
+        'GSE72509': [], 'GSE112087': [], 'GSE228066': [], 'GSE122459': [],
     },
     '2_scRNA_Expansion': {
         'GSE135779': [], 'GSE139358': [], 'GSE162577': [], 'GSE163121_RAW': [],
@@ -56,7 +56,7 @@ MASTER_REGISTRY = {
         'GSE182825': [], 'GSE294496': [],
     },
     '4_Senescence_Validation': {
-        'GSE101766': [], 'GSE226598': [], 'GSE262856': [], 'GSE297723': [], 'GSE157007': [],
+        'GSE101766': [], 'GSE262856': [], 'GSE297723': [],
     },
 }
 

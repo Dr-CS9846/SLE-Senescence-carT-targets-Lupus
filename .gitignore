@@ -46,3 +46,6 @@ datasets/
 *.tmp
 .ipynb_checkpoints/
 pipeline_output.txt
+.docx
+create_docx.py
+~$*

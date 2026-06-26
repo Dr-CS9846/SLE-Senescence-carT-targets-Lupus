@@ -2,7 +2,7 @@
 SLE Senescence Scoring Pipeline v9
 SenMayo panel: 125 genes
 scRNA QC: min_genes=200, min_cells=3, max_mito=0.2
-Started: 2026-06-26 11:55:58
+Started: 2026-06-26 13:33:21
 ======================================================================
 
 ======================================================================
@@ -24,10 +24,6 @@ PROCESSING
       -> Loaded: 62069 x 27
       -> Scored: 27 samples, 0/125 SenMayo genes matched
   -> [SUCCESS] (27 samples)
-  GSE181500:
-    GSE181500_RAW ...
-      -> EMPTY
-  -> [LOAD_FAILED]
   GSE228066:
     GSE228066_gene.xlsx ...
       -> Loaded: 17826 x 45
@@ -145,10 +141,6 @@ PROCESSING
       -> Loaded: 47565 x 276
       -> Scored: 276 samples, 0/125 SenMayo genes matched
   -> [SUCCESS] (276 samples)
-  GSE157007:
-  -> [NOT_FOUND]
-  GSE226598:
-  -> [NOT_FOUND]
   GSE262856:
     GSE262856_MRC5_Senescence_Transcriptomics.txt ...
       -> EMPTY
@@ -172,13 +164,13 @@ Batch-corrected 19 datasets to common scale
 ======================================================================
 FINAL SUMMARY
 ======================================================================
-1_Bulk_Expansion: 4/5
+1_Bulk_Expansion: 4/4
 2_scRNA_Expansion: 6/6
 3_Tissue_Expansion: 6/6
-4_Senescence_Validation: 3/5
+4_Senescence_Validation: 3/3
 
-TOTAL: 19/22 SUCCESS
+TOTAL: 19/19 SUCCESS
 Total samples/cells scored: 2919
 SenMayo genes used: 125
-Runtime: 253.7s
+Runtime: 178.9s
 Results: data/external_validation
