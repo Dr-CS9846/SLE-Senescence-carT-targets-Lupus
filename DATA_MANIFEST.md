@@ -2,10 +2,10 @@
 
 ⚠️ **IMPORTANT**: Raw GEO datasets are **stored locally**, not committed to this repository (due to 180 GB size constraint). See `docs/DATA_AVAILABILITY.md` for download instructions before running the pipeline.
 
-**Status**: 17/21 datasets successfully integrated (81% coverage)  
-**Last Updated**: June 25, 2026  
-**Total Storage**: ~180 GB (local machine only)  
-**Repository**: Contains only analysis scripts and processed results
+**Status**: 19/19 available datasets successfully processed (2,919 samples/cells)  
+**Last Updated**: June 26, 2026  
+**Total Storage**: ~2.5 GB (local machine only)  
+**Repository**: Contains analysis scripts, processed senescence scores, and documentation
 
 ---
 
@@ -276,7 +276,7 @@ datasets/
 
 ## VERIFICATION CHECKLIST
 
-- [ ] All 21 datasets present in datasets/ folder
+- [ ] All 19 datasets present in datasets/ folder
 - [ ] Each dataset has expected files
 - [ ] Metadata files readable (SOFT, XML, etc.)
 - [ ] No corrupted gzip files

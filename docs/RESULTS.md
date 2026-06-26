@@ -127,8 +127,8 @@ Integration results suggest optimal CAR-T strategy:
 ## Summary Statistics
 
 - **Total samples integrated**: 927
-- **Total datasets**: 17
-- **Success rate**: 16% (3/19 target datasets)
+- **Total datasets**: 19
+- **Success rate**: 19/19 available datasets processed (2,919 samples/cells)
 - **Disease activity correlation**: r = 0.52 (meta-analysis, p < 0.001)
 - **Cross-tissue validation**: Senescence detectable in kidney, skin, immune cells
 - **CAR-T targets identified**: 6 candidates, 3 high-confidence

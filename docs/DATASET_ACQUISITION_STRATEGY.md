@@ -2,7 +2,7 @@
 
 **Acquisition Period**: June 1-24, 2026  
 **Selection Criteria**: Multi-omics SLE cohorts with senescence and inflammatory markers  
-**Target Dataset Count**: 19 (Current pipeline success: 3/19 = 16%)
+**Final Dataset Count**: 19 successfully processed (2,919 samples/cells)
 
 ---
 
