@@ -35,7 +35,7 @@ Senescence scores compared across 5 disease groups:
 
 The significant Kruskal-Wallis (p=0.005) confirms senescence heterogeneity across disease groups in synovial tissue. SLE vs OA trending effect (+1.495, p=0.064) warrants validation in larger tissue cohorts.
 
-Source: `results/disease_comparisons.csv`
+Source: `results/VERIFIED_RESULTS.json` (disease_comparison key)
 
 ---
 

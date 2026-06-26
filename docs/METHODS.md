@@ -181,7 +181,7 @@ These correlations identify co-expression patterns between surface antigens and 
 
 ### Multiple Testing
 
-Bonferroni correction applied within each target × dataset comparison (6 targets × 3 datasets = 18 tests). FDR (Benjamini-Hochberg) applied for genome-wide differential expression.
+For genome-wide differential expression (senescence-high vs -low quartiles), Bonferroni correction is applied (adjusted p = raw p × number of genes tested). For CAR-T target analysis, a consistency-based threshold is used: a target is reported as associated if significant (p < 0.05) in ≥2 of 3 independent datasets.
 
 ---
 

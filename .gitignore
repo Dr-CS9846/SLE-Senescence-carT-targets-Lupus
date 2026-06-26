@@ -39,7 +39,7 @@ Thumbs.db
 # Data (raw GEO downloads - too large for GitHub)
 datasets/
 
-# AI assistant config
+# Local config
 .claude/
 
 # Temporary

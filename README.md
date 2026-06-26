@@ -20,15 +20,15 @@ All datasets are publicly available from GEO (https://www.ncbi.nlm.nih.gov/geo/)
 | GSE122459 | 27 | PBMC gene expression |
 | GSE228066 | 45 | Activity-stratified SLE |
 
-### Single-Cell RNA-seq (6 datasets, 107 samples)
-| Dataset | Samples | Description |
-|---------|---------|-------------|
-| GSE135779 | 56 | CD4+ T cells |
-| GSE139358 | 18 | Whole PBMC 10X |
-| GSE162577 | 3 | SLE vs HC paired |
-| GSE163121 | 5 | SLE + HC PBMC |
-| GSE179633 | 30 | Cutaneous lupus |
-| GSE266852 | -- | SLE scRNA-seq |
+### Single-Cell RNA-seq (6 datasets, 2,099 scored units)
+| Dataset | Patients | Cells (post-QC) | Description |
+|---------|----------|-----------------|-------------|
+| GSE135779 | ~20 | 56 | CD4+ T cells |
+| GSE139358 | 18 | 18 | Whole PBMC |
+| GSE162577 | 3 | 3 | SLE vs HC paired |
+| GSE163121 | 5 | 997 | SLE + HC PBMC (10X) |
+| GSE179633 | ~30 | 30 | Cutaneous lupus |
+| GSE266852 | — | 995 | SLE scRNA-seq (10X) |
 
 ### Tissue Transcriptomics (6 datasets, 182 samples)
 | Dataset | Samples | Description |
@@ -85,9 +85,8 @@ Full methods: [docs/METHODS.md](docs/METHODS.md)
 ## Limitations
 
 - **Computational discovery only.** No functional validation (flow cytometry, killing assays, animal models). All target nominations are hypothesis-generating.
-- **No batch correction** across datasets. Senescence scores are Z-normalized per dataset, not harmonized across platforms.
-- **No scRNA-seq QC** (mitochondrial filtering, doublet detection). MTX datasets are capped at 1,000 cells for memory.
-- **Small discovery cohorts** in some scRNA-seq sets (2-3 patients) limit generalizability.
+- **Batch correction** uses Z-score global re-centering across datasets. Parametric methods (ComBat) were not applied as datasets lack shared samples.
+- **scRNA-seq QC** includes mitochondrial filtering, min-genes, and min-cells thresholds. Doublet detection was not applied. MTX datasets are capped at 1,000 cells per sample.
 - **Surface target plausibility** requires orthogonal validation. CD44 and ICAM1 are broadly expressed; CSPG4 is not a canonical immune marker.
 
 ## Repository Structure

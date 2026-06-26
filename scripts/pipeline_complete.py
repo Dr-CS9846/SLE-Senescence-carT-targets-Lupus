@@ -4,7 +4,7 @@ SLE Senescence Scoring Pipeline v9
 - 125-gene SenMayo panel (loaded from data/senmayo_125genes.csv)
 - Multi-format support: TSV, Excel, CSV, 10X MTX sparse matrices
 - scRNA-seq QC: min genes, min cells, mitochondrial gene filtering
-- Cross-dataset batch correction via ComBat (statsmodels)
+- Cross-dataset Z-score batch alignment
 - Auto-discovery of nested directories
 - Structured logging with per-dataset metrics
 """
@@ -145,7 +145,8 @@ def load_single_mtx(folder_path):
             try:
                 kw = {'compression': 'gzip'} if barcodes_file.endswith('.gz') else {}
                 barcodes = pd.read_csv(barcodes_file, header=None, **kw)[0].values
-            except:
+            except Exception as e:
+                log.warning(f"    Barcode file error ({e}), using numeric IDs")
                 barcodes = [f"Cell_{i}" for i in range(matrix.shape[0])]
         else:
             barcodes = [f"Cell_{i}" for i in range(matrix.shape[0])]
@@ -155,7 +156,8 @@ def load_single_mtx(folder_path):
                 kw = {'compression': 'gzip'} if features_file.endswith('.gz') else {}
                 features = pd.read_csv(features_file, header=None, sep='\t', **kw)
                 features = features.iloc[:, -1].values
-            except:
+            except Exception as e:
+                log.warning(f"    Feature file error ({e}), using numeric IDs")
                 features = [f"Gene_{i}" for i in range(matrix.shape[1])]
         else:
             features = [f"Gene_{i}" for i in range(matrix.shape[1])]
@@ -163,7 +165,8 @@ def load_single_mtx(folder_path):
         max_cells = min(1000, matrix.shape[0])
         df = pd.DataFrame(matrix[:max_cells, :].toarray(), columns=features, index=barcodes[:max_cells])
         return df
-    except:
+    except Exception as e:
+        log.warning(f"    MTX load error: {e}")
         return None
 
 
@@ -177,7 +180,7 @@ def load_mtx_directory(folder_path):
             try:
                 if any('matrix.mtx' in f for f in os.listdir(subdir_path)):
                     mtx_subdirs.append(subdir_path)
-            except:
+            except OSError:
                 continue
 
         if mtx_subdirs:
@@ -188,7 +191,8 @@ def load_mtx_directory(folder_path):
             return None
 
         return load_single_mtx(folder_path)
-    except:
+    except Exception as e:
+        log.warning(f"    MTX directory error: {e}")
         return None
 
 
@@ -207,7 +211,7 @@ def load_file(filepath, skip_rows=None):
                             skip_rows += 1
                         else:
                             break
-            except:
+            except OSError:
                 skip_rows = 0
 
         skip_rows = skip_rows or 0
@@ -220,7 +224,8 @@ def load_file(filepath, skip_rows=None):
             return pd.read_csv(filepath, sep='\t', skiprows=skip_rows, compression='gzip', low_memory=False)
         else:
             return pd.read_csv(filepath, sep='\t', skiprows=skip_rows, low_memory=False)
-    except:
+    except Exception as e:
+        log.warning(f"    File load error: {e}")
         return None
 
 
@@ -270,7 +275,8 @@ def process_dataset(dataset_id, files_list, category):
             expr_df = df
             log.info(f"      -> Loaded: {df.shape[0]} x {df.shape[1]}")
             break
-        except:
+        except Exception as e:
+            log.warning(f"      -> Error: {e}")
             continue
 
     if expr_df is None:
@@ -312,7 +318,8 @@ def process_dataset(dataset_id, files_list, category):
         log.info(f"      -> Scored: {len(score)} samples, {n_senmayo}/125 SenMayo genes matched")
         return 'SUCCESS', scores_df
 
-    except:
+    except Exception as e:
+        log.warning(f"      -> Scoring error: {e}")
         return 'PROCESS_FAILED', None
 
 # ---------------------------------------------------------------------------

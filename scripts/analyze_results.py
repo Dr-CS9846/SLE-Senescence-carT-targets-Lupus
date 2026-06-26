@@ -76,7 +76,8 @@ def load_expression(filepath, fmt='excel'):
         df = df.apply(pd.to_numeric, errors='coerce').dropna(how='all', axis=0).dropna(how='all', axis=1)
         sums = df.sum(axis=0).replace(0, 1)
         return np.log2((df.div(sums, axis=1) * 1e6) + 1)
-    except:
+    except Exception as e:
+        print(f"  Expression load error: {e}")
         return None
 
 
@@ -505,7 +506,7 @@ def fig5_high_vs_low_senescence():
                     'Mean_High': high_vals.mean(), 'Mean_Low': low_vals.mean(),
                     'Dataset': ds_name,
                 })
-            except:
+            except (ValueError, TypeError):
                 continue
 
         if de_results:

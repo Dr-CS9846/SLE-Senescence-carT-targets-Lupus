@@ -19,7 +19,7 @@ Raw GEO datasets are stored locally (~2.5 GB), not committed to this repository.
 | GSE122459 | 27 | Excel (normalized) | Illumina | ✅ Processed |
 | GSE228066 | 45 | Excel (gene counts) | Illumina | ✅ Processed (108/125 SenMayo matched) |
 
-### Category 2: Single-Cell RNA-seq (6 datasets, 1,099 samples/cells)
+### Category 2: Single-Cell RNA-seq (6 datasets, 2,099 samples/cells)
 
 | Dataset | Samples | Format | Platform | Status |
 |---------|---------|--------|----------|--------|
