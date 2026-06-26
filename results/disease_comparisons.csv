@@ -1,0 +1,5 @@
+Comparison,Dataset,N_SLE,N_Other,Mean_SLE,Mean_Other,Effect_Size,U_statistic,p_value,Significant
+SLE vs OA,GSE36700,4.0,5.0,0.4696,-1.0258,1.4954,18.0,0.063492,False
+SLE vs RA,GSE36700,4.0,7.0,0.4696,1.018,-0.5484,11.0,0.648485,False
+SLE vs MIC,GSE36700,4.0,5.0,0.4696,-0.6498,1.1193,16.0,0.190476,False
+Kruskal-Wallis (all groups),GSE36700,,,,,,12.694434137291282,0.005346,True

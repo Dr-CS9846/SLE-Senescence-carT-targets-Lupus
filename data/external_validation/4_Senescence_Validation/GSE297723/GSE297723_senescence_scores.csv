@@ -1,7 +1,7 @@
 ,Senescence_Score
-allblm,
-allcontrol,
-lampnegblm,
-lampnegcontrol,
-lampposblm,
-lampposcontrol,
+allblm,0.22558756842468308
+allcontrol,0.5589425944316324
+lampnegblm,-1.643049823772983
+lampnegcontrol,-0.8802149599665858
+lampposblm,0.819561014516133
+lampposcontrol,0.9191736066998548

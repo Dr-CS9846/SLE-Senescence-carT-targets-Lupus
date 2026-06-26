@@ -102,9 +102,11 @@ def batch_correct_scores(all_scores):
     if not all_scores:
         return all_scores
 
-    global_values = np.concatenate([s['Senescence_Score'].values for s in all_scores.values()])
-    global_mean = np.mean(global_values)
-    global_std = np.std(global_values) + 1e-6
+    global_values = np.concatenate([s['Senescence_Score'].dropna().values for s in all_scores.values()])
+    if len(global_values) == 0:
+        return all_scores
+    global_mean = np.nanmean(global_values)
+    global_std = np.nanstd(global_values) + 1e-6
 
     corrected = {}
     for dataset_id, scores_df in all_scores.items():

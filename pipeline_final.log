@@ -2,7 +2,7 @@
 SLE Senescence Scoring Pipeline v9
 SenMayo panel: 125 genes
 scRNA QC: min_genes=200, min_cells=3, max_mito=0.2
-Started: 2026-06-26 10:58:42
+Started: 2026-06-26 11:55:58
 ======================================================================
 
 ======================================================================
@@ -180,5 +180,5 @@ FINAL SUMMARY
 TOTAL: 19/22 SUCCESS
 Total samples/cells scored: 2919
 SenMayo genes used: 125
-Runtime: 308.2s
+Runtime: 253.7s
 Results: data/external_validation
