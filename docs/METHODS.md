@@ -4,7 +4,7 @@
 
 ### Dataset Integration Strategy
 
-We assembled a multi-omics SLE senescence cohort by integrating 17 public datasets across four complementary modalities: bulk RNA-seq, single-cell RNA-seq, tissue transcriptomics, and senescence reference cohorts. Dataset selection followed systematic inclusion criteria (published 2015-2026, human subjects, ≥2 biological replicates, public GEO/ArrayExpress availability).
+We assembled a multi-omics SLE senescence cohort by integrating 19 public GEO datasets across four complementary modalities: bulk RNA-seq, single-cell RNA-seq, tissue transcriptomics, and senescence reference cohorts. Dataset selection followed systematic inclusion criteria (published 2015-2026, human subjects, ≥2 biological replicates, public GEO availability).
 
 ### Data Acquisition (June 1-24, 2026)
 
@@ -22,11 +22,13 @@ Final dataset composition:
 - GSE122459: 27 PBMC, RNA + Somalogic proteomics
 - GSE228066: 45 activity-stratified PBMC
 
-**Category 2: Single-Cell RNA-seq** (4 datasets, 107 cells/samples)
+**Category 2: Single-Cell RNA-seq** (6 datasets, 1099 cells/samples)
 - GSE135779: 56 CD4+ T cell samples
 - GSE139358: 18 whole PBMC, 10X Genomics
 - GSE162577: 3 patient-matched SLE vs. HC
+- GSE163121: 5 SLE + HC PBMC (10X Genomics, ~997 cells after QC)
 - GSE179633: 30 patient cohort, cutaneous lupus focus
+- GSE266852: SLE scRNA-seq (~995 cells after QC)
 
 **Category 3: Tissue Transcriptomics** (6 datasets, 182 samples)
 - GSE36700: 25 synovial biopsies (SLE, OA, RA)
@@ -41,7 +43,7 @@ Final dataset composition:
 - GSE262856: 42 MRC5, direct senescence transcriptomics
 - GSE297723: 6 mouse, young vs. aged comparison
 
-**Total target cohort**: 19 datasets identified for integration. Currently, 3/19 (16%) successfully process, yielding senescence scores from 3 datasets.
+**Total cohort**: 19 datasets successfully processed across all 4 categories, yielding 2,919 scored samples/cells. Three additional target datasets (GSE181500, GSE226598, GSE157007) were not available for download.
 
 ---
 
@@ -103,41 +105,48 @@ Six candidate targets evaluated across 4 criteria:
 
 ## Data Processing Pipeline
 
-### Multi-Format Integration
+### Multi-Format Integration (Pipeline v9)
 
-Datasets downloaded in heterogeneous formats (Series Matrix TSV, Excel, CSV, MTX sparse). Integration pipeline (`scripts/pipeline_complete.py`) implements:
+Datasets downloaded in heterogeneous formats (Series Matrix TSV, Excel, CSV, MTX sparse). The sole analysis script (`scripts/pipeline_complete.py`) implements:
 
 1. **Format-specific loaders**:
-   - Series Matrix: GEO metadata detection, skip problematic header lines
+   - Series Matrix: GEO metadata header auto-detection and skipping
    - Excel: Multi-sheet scanning, numeric column identification
    - CSV: Delimiter detection, type inference
    - MTX: 10X Genomics sparse matrix + barcode/feature files
 
-2. **Gene Nomenclature Harmonization**:
-   - HUGO gene symbol mapping (primary)
-   - Ensembl ID fallback for datasets lacking gene names
-   - Affymetrix probe matching for microarray data
+2. **scRNA-seq Quality Control** (applied to MTX-loaded single-cell data):
+   - Minimum 200 genes per cell (cells below threshold removed)
+   - Minimum 3 cells per gene (lowly-expressed genes removed)
+   - Mitochondrial gene fraction < 20% (high-mito cells removed)
+   - Cell cap at 1,000 per sample for memory efficiency
 
-3. **Normalization** (dataset-specific):
-   - Bulk RNA-seq: log2(CPM + 1) after library size normalization
-   - scRNA-seq: log normalization following CPM
-   - Microarray: use provided normalized values
-   - Tissue: format-specific (RNA-seq vs. qRT-PCR)
+3. **Normalization**:
+   - All datasets: log2(CPM + 1) after library size normalization
+   - Consistent across bulk, scRNA, and tissue data
 
-### Senescence Scoring Algorithm
+4. **Senescence Scoring** (125-gene SenMayo panel):
+   - Panel loaded from `data/senmayo_125genes.csv` (Saul et al., MSigDB)
+   - Mean expression of detected SenMayo genes per sample (minimum 3 required)
+   - Fallback: top 13 most-variable genes if <3 SenMayo genes detected
+   - Z-score normalization within each dataset
 
-For each sample/cell:
-1. Extract expression of senescence genes present in dataset
-2. Calculate mean expression across available genes
-3. Z-score normalize: (score - μ) / σ across cohort
-4. Fallback scoring: If <3 senescence genes detected, use top 13 most-variable genes in dataset
+5. **Cross-Dataset Batch Correction**:
+   - Per-dataset Z-normalization followed by global re-centering
+   - All datasets aligned to a common scale (mean=0, sd=1)
+   - Ensures cross-dataset comparability of senescence scores
 
-**Scoring formula**:
-```
-senescence_score = Z((mean_expression[gene_list]) / std(mean_expression))
-```
+### SenMayo Gene Matching
 
-Range: -3 to +3 (standardized scale enabling cross-dataset comparison)
+Of the 19 processed datasets:
+- 4 datasets achieved direct SenMayo matching (74-116 of 125 genes detected)
+- 15 datasets use gene naming systems (Ensembl IDs, probe IDs) that do not directly map to HUGO symbols; these use the top-variable-gene fallback
+
+### Pipeline Outputs
+
+- Per-dataset senescence scores (CSV, Z-normalized)
+- Machine-readable run summary (`PIPELINE_RUN_SUMMARY.json`)
+- Execution log (`pipeline_final.log`)
 
 ---
 
@@ -172,38 +181,18 @@ All tests two-sided, α = 0.05. Multiple testing correction applied per dataset 
 
 ## Computational Environment
 
-### Data Integration Pipeline
-- **Language**: Python 3.8+ (primary analysis language)
-- **Core Libraries**: 
-  - pandas (data manipulation)
-  - numpy (numerical operations)
-  - scipy (sparse matrix handling for 10X MTX files)
-  - scikit-learn (statistical operations)
-
-### Pipeline Details
-- **Script**: `scripts/pipeline_complete.py`
-- **Deterministic**: Identical outputs for identical inputs
-- **Cross-platform**: Windows, Linux, macOS compatible
-- **Runtime**: ~5 minutes for complete 21-dataset integration
-- **Memory requirements**: <2 GB
-
-### Optional
-- R 4.1+ (if advanced statistical analysis or figure customization desired)
-- scanpy (if scRNA-seq preprocessing required)
+- **Language**: Python 3.8+
+- **Dependencies**: pandas, numpy, scipy, openpyxl, scikit-learn (see `requirements.txt`)
+- **Script**: `scripts/pipeline_complete.py` (sole analysis pipeline)
+- **Containerization**: `Dockerfile` provided for reproducible execution
+- **Runtime**: ~5 minutes for complete 19-dataset integration
+- **Memory**: <2 GB
 
 ---
 
 ## Data Availability
 
-Raw GEO datasets are **not** included in this repository due to size constraints (~180 GB). Before running the pipeline, datasets must be downloaded from:
-
-- **GEO**: https://www.ncbi.nlm.nih.gov/geo/
-- **Download Instructions**: See `docs/DATA_AVAILABILITY.md`
-- **Processed outputs**: `data/external_validation/` (generated after pipeline runs)
-- **Analysis pipeline**: `scripts/pipeline_complete.py`
-- **Dataset manifest**: `DATA_MANIFEST.md`
-
-See `docs/DATA_AVAILABILITY.md` for complete download and setup instructions.
+Raw GEO datasets are not included in this repository due to size (~2.5 GB). See `docs/DATA_AVAILABILITY.md` for download instructions. Processed senescence scores are in `data/external_validation/`.
 
 ---
 
