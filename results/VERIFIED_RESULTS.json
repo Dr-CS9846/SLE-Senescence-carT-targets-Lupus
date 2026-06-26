@@ -1,394 +1,195 @@
 {
-  "analysis_date": "2026-06-26 12:00",
-  "datasets_analyzed": 19,
+  "analysis_date": "2026-06-26 12:14",
+  "total_datasets": 19,
   "total_samples": 2917,
-  "senescence_panel": "125-gene SenMayo (Saul et al.)",
-  "score_summary": [
-    {
-      "Dataset": "GSE101766",
-      "Category": "4_Senescence_Validation",
-      "N": 276,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -3.7097,
-      "Max": 1.7193
+  "scoring_panel": "125-gene SenMayo (Saul et al.)",
+  "disease_comparison": {
+    "kruskal_wallis": {
+      "H": 12.694,
+      "p": 0.005346
     },
+    "pairwise": [
+      {
+        "Group": "vs OA",
+        "Effect": 1.4953549642813657,
+        "p": 0.06349206349206349
+      },
+      {
+        "Group": "vs RA",
+        "Effect": -0.5484308074416673,
+        "p": 0.6484848484848484
+      },
+      {
+        "Group": "vs MIC",
+        "Effect": 1.1193061765380794,
+        "p": 0.19047619047619047
+      }
+    ],
+    "roc_auc": 0.6786
+  },
+  "cart_target_results": [
     {
-      "Dataset": "GSE112087",
-      "Category": "1_Bulk_Expansion",
-      "N": 120,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -1.7976,
-      "Max": 1.9991
-    },
-    {
-      "Dataset": "GSE122459",
-      "Category": "1_Bulk_Expansion",
-      "N": 27,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -0.4905,
-      "Max": 5.0862
-    },
-    {
-      "Dataset": "GSE135779",
-      "Category": "2_scRNA_Expansion",
-      "N": 56,
-      "Mean": 0.0,
-      "SD": 0.0,
-      "Min": 0.0,
-      "Max": 0.0
-    },
-    {
-      "Dataset": "GSE139358",
-      "Category": "2_scRNA_Expansion",
-      "N": 18,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -1.7186,
-      "Max": 1.3269
-    },
-    {
-      "Dataset": "GSE155405",
-      "Category": "3_Tissue_Expansion",
-      "N": 13,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -2.1909,
-      "Max": 1.6179
-    },
-    {
-      "Dataset": "GSE162577",
-      "Category": "2_scRNA_Expansion",
-      "N": 3,
-      "Mean": 0.0,
-      "SD": 0.0,
-      "Min": 0.0,
-      "Max": 0.0
-    },
-    {
-      "Dataset": "GSE163121_RAW",
-      "Category": "2_scRNA_Expansion",
-      "N": 997,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -2.7979,
-      "Max": 5.8166
-    },
-    {
-      "Dataset": "GSE174188",
-      "Category": "3_Tissue_Expansion",
-      "N": 88,
-      "Mean": -0.0,
-      "SD": 0.0,
-      "Min": -0.0,
-      "Max": -0.0
-    },
-    {
-      "Dataset": "GSE179633",
-      "Category": "2_scRNA_Expansion",
-      "N": 30,
-      "Mean": 0.0,
-      "SD": 0.0,
-      "Min": 0.0,
-      "Max": 0.0
-    },
-    {
-      "Dataset": "GSE182825",
-      "Category": "3_Tissue_Expansion",
-      "N": 41,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -2.2872,
-      "Max": 2.229
-    },
-    {
-      "Dataset": "GSE200306",
-      "Category": "3_Tissue_Expansion",
-      "N": 12,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -1.5704,
-      "Max": 1.634
-    },
-    {
+      "Target": "CSPG4",
       "Dataset": "GSE228066",
-      "Category": "1_Bulk_Expansion",
       "N": 45,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -3.1782,
-      "Max": 1.5682
-    },
-    {
-      "Dataset": "GSE262856",
-      "Category": "4_Senescence_Validation",
-      "N": 42,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -1.0822,
-      "Max": 1.6938
-    },
-    {
-      "Dataset": "GSE266852_OES19443150_matrix.mtx",
-      "Category": "2_scRNA_Expansion",
-      "N": 995,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -1.4991,
-      "Max": 1.6297
-    },
-    {
-      "Dataset": "GSE294496",
-      "Category": "3_Tissue_Expansion",
-      "N": 2,
-      "Mean": 0.0,
-      "SD": 0.0,
-      "Min": 0.0,
-      "Max": 0.0
-    },
-    {
-      "Dataset": "GSE297723",
-      "Category": "4_Senescence_Validation",
-      "N": 6,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -1.643,
-      "Max": 0.9192
-    },
-    {
-      "Dataset": "GSE36700",
-      "Category": "3_Tissue_Expansion",
-      "N": 25,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -1.6996,
-      "Max": 1.9109
-    },
-    {
-      "Dataset": "GSE72509",
-      "Category": "1_Bulk_Expansion",
-      "N": 121,
-      "Mean": 0.0,
-      "SD": 1.0348,
-      "Min": -3.5347,
-      "Max": 1.3421
-    }
-  ],
-  "disease_comparisons": [
-    {
-      "Comparison": "SLE vs OA",
-      "Dataset": "GSE36700",
-      "N_SLE": 4,
-      "N_Other": 5,
-      "Mean_SLE": 0.4696,
-      "Mean_Other": -1.0258,
-      "Effect_Size": 1.4954,
-      "U_statistic": 18.0,
-      "p_value": 0.063492,
+      "Mean_Expr": 0.2153,
+      "Spearman_r": 0.229,
+      "p_value": 0.130312,
       "Significant": "False"
     },
     {
-      "Comparison": "SLE vs RA",
-      "Dataset": "GSE36700",
-      "N_SLE": 4,
-      "N_Other": 7,
-      "Mean_SLE": 0.4696,
-      "Mean_Other": 1.018,
-      "Effect_Size": -0.5484,
-      "U_statistic": 11.0,
-      "p_value": 0.648485,
-      "Significant": "False"
-    },
-    {
-      "Comparison": "SLE vs MIC",
-      "Dataset": "GSE36700",
-      "N_SLE": 4,
-      "N_Other": 5,
-      "Mean_SLE": 0.4696,
-      "Mean_Other": -0.6498,
-      "Effect_Size": 1.1193,
-      "U_statistic": 16.0,
-      "p_value": 0.190476,
-      "Significant": "False"
-    },
-    {
-      "Comparison": "Kruskal-Wallis (all groups)",
-      "Dataset": "GSE36700",
-      "U_statistic": 12.694434137291282,
-      "p_value": 0.005346,
+      "Target": "CD44",
+      "Dataset": "GSE228066",
+      "N": 45,
+      "Mean_Expr": 8.8859,
+      "Spearman_r": 0.3549,
+      "p_value": 0.016735,
       "Significant": "True"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE228066",
+      "N": 45,
+      "Mean_Expr": 5.8336,
+      "Spearman_r": 0.3387,
+      "p_value": 0.022839,
+      "Significant": "True"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE228066",
+      "N": 45,
+      "Mean_Expr": 0.4382,
+      "Spearman_r": 0.2686,
+      "p_value": 0.074462,
+      "Significant": "False"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE228066",
+      "N": 45,
+      "Mean_Expr": 5.5636,
+      "Spearman_r": 0.3982,
+      "p_value": 0.006754,
+      "Significant": "True"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE228066",
+      "N": 45,
+      "Mean_Expr": 0.0065,
+      "Spearman_r": -0.1464,
+      "p_value": 0.337283,
+      "Significant": "False"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE139358",
+      "N": 18,
+      "Mean_Expr": 0.1997,
+      "Spearman_r": 0.6484,
+      "p_value": 0.003608,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE139358",
+      "N": 18,
+      "Mean_Expr": 6.42,
+      "Spearman_r": 0.6925,
+      "p_value": 0.001448,
+      "Significant": "True"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE139358",
+      "N": 18,
+      "Mean_Expr": 6.758,
+      "Spearman_r": -0.1992,
+      "p_value": 0.428158,
+      "Significant": "False"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE139358",
+      "N": 18,
+      "Mean_Expr": 0.1442,
+      "Spearman_r": 0.466,
+      "p_value": 0.051276,
+      "Significant": "False"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE139358",
+      "N": 18,
+      "Mean_Expr": 2.9333,
+      "Spearman_r": 0.7544,
+      "p_value": 0.000298,
+      "Significant": "True"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE139358",
+      "N": 18,
+      "Mean_Expr": 0.0775,
+      "Spearman_r": 0.6351,
+      "p_value": 0.004629,
+      "Significant": "True"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE182825",
+      "N": 41,
+      "Mean_Expr": 5.0135,
+      "Spearman_r": 0.33,
+      "p_value": 0.035128,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE182825",
+      "N": 41,
+      "Mean_Expr": 7.1844,
+      "Spearman_r": 0.2962,
+      "p_value": 0.060084,
+      "Significant": "False"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE182825",
+      "N": 41,
+      "Mean_Expr": 5.1955,
+      "Spearman_r": 0.6709,
+      "p_value": 2e-06,
+      "Significant": "True"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE182825",
+      "N": 41,
+      "Mean_Expr": 5.0555,
+      "Spearman_r": 0.611,
+      "p_value": 2.2e-05,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE182825",
+      "N": 41,
+      "Mean_Expr": 4.6524,
+      "Spearman_r": 0.2631,
+      "p_value": 0.096559,
+      "Significant": "False"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE182825",
+      "N": 41,
+      "Mean_Expr": 4.6128,
+      "Spearman_r": -0.0523,
+      "p_value": 0.745536,
+      "Significant": "False"
     }
   ],
-  "cart_target_analysis": [
-    {
-      "Target": "CSPG4",
-      "Dataset": "GSE228066",
-      "Mean_Expression": 0.2153,
-      "SD_Expression": 0.1632,
-      "Senescence_Correlation_r": 0.229,
-      "Senescence_Correlation_p": 0.130312,
-      "N_Samples": 45
-    },
-    {
-      "Target": "CD44",
-      "Dataset": "GSE228066",
-      "Mean_Expression": 8.8859,
-      "SD_Expression": 0.4657,
-      "Senescence_Correlation_r": 0.3549,
-      "Senescence_Correlation_p": 0.016735,
-      "N_Samples": 45
-    },
-    {
-      "Target": "ICAM1",
-      "Dataset": "GSE228066",
-      "Mean_Expression": 5.8336,
-      "SD_Expression": 0.6444,
-      "Senescence_Correlation_r": 0.3387,
-      "Senescence_Correlation_p": 0.022839,
-      "N_Samples": 45
-    },
-    {
-      "Target": "VCAM1",
-      "Dataset": "GSE228066",
-      "Mean_Expression": 0.4382,
-      "SD_Expression": 0.5423,
-      "Senescence_Correlation_r": 0.2686,
-      "Senescence_Correlation_p": 0.074462,
-      "N_Samples": 45
-    },
-    {
-      "Target": "CD38",
-      "Dataset": "GSE228066",
-      "Mean_Expression": 5.5636,
-      "SD_Expression": 0.865,
-      "Senescence_Correlation_r": 0.3982,
-      "Senescence_Correlation_p": 0.006754,
-      "N_Samples": 45
-    },
-    {
-      "Target": "EGFR",
-      "Dataset": "GSE228066",
-      "Mean_Expression": 0.0065,
-      "SD_Expression": 0.0247,
-      "Senescence_Correlation_r": -0.1464,
-      "Senescence_Correlation_p": 0.337283,
-      "N_Samples": 45
-    },
-    {
-      "Target": "CSPG4",
-      "Dataset": "GSE139358",
-      "Mean_Expression": 0.1997,
-      "SD_Expression": 0.1921,
-      "Senescence_Correlation_r": 0.6484,
-      "Senescence_Correlation_p": 0.003608,
-      "N_Samples": 18
-    },
-    {
-      "Target": "CD44",
-      "Dataset": "GSE139358",
-      "Mean_Expression": 6.42,
-      "SD_Expression": 0.7801,
-      "Senescence_Correlation_r": 0.6925,
-      "Senescence_Correlation_p": 0.001448,
-      "N_Samples": 18
-    },
-    {
-      "Target": "ICAM1",
-      "Dataset": "GSE139358",
-      "Mean_Expression": 6.758,
-      "SD_Expression": 1.3202,
-      "Senescence_Correlation_r": -0.1992,
-      "Senescence_Correlation_p": 0.428158,
-      "N_Samples": 18
-    },
-    {
-      "Target": "VCAM1",
-      "Dataset": "GSE139358",
-      "Mean_Expression": 0.1442,
-      "SD_Expression": 0.2716,
-      "Senescence_Correlation_r": 0.466,
-      "Senescence_Correlation_p": 0.051276,
-      "N_Samples": 18
-    },
-    {
-      "Target": "CD38",
-      "Dataset": "GSE139358",
-      "Mean_Expression": 2.9333,
-      "SD_Expression": 0.8872,
-      "Senescence_Correlation_r": 0.7544,
-      "Senescence_Correlation_p": 0.000298,
-      "N_Samples": 18
-    },
-    {
-      "Target": "EGFR",
-      "Dataset": "GSE139358",
-      "Mean_Expression": 0.0775,
-      "SD_Expression": 0.0786,
-      "Senescence_Correlation_r": 0.6351,
-      "Senescence_Correlation_p": 0.004629,
-      "N_Samples": 18
-    },
-    {
-      "Target": "CSPG4",
-      "Dataset": "GSE182825",
-      "Mean_Expression": 5.0135,
-      "SD_Expression": 0.5575,
-      "Senescence_Correlation_r": 0.33,
-      "Senescence_Correlation_p": 0.035128,
-      "N_Samples": 41
-    },
-    {
-      "Target": "CD44",
-      "Dataset": "GSE182825",
-      "Mean_Expression": 7.1844,
-      "SD_Expression": 0.3093,
-      "Senescence_Correlation_r": 0.2962,
-      "Senescence_Correlation_p": 0.060084,
-      "N_Samples": 41
-    },
-    {
-      "Target": "ICAM1",
-      "Dataset": "GSE182825",
-      "Mean_Expression": 5.1955,
-      "SD_Expression": 0.5268,
-      "Senescence_Correlation_r": 0.6709,
-      "Senescence_Correlation_p": 2e-06,
-      "N_Samples": 41
-    },
-    {
-      "Target": "VCAM1",
-      "Dataset": "GSE182825",
-      "Mean_Expression": 5.0555,
-      "SD_Expression": 0.485,
-      "Senescence_Correlation_r": 0.611,
-      "Senescence_Correlation_p": 2.2e-05,
-      "N_Samples": 41
-    },
-    {
-      "Target": "CD38",
-      "Dataset": "GSE182825",
-      "Mean_Expression": 4.6524,
-      "SD_Expression": 0.5439,
-      "Senescence_Correlation_r": 0.2631,
-      "Senescence_Correlation_p": 0.096559,
-      "N_Samples": 41
-    },
-    {
-      "Target": "EGFR",
-      "Dataset": "GSE182825",
-      "Mean_Expression": 4.6128,
-      "SD_Expression": 0.5082,
-      "Senescence_Correlation_r": -0.0523,
-      "Senescence_Correlation_p": 0.745536,
-      "N_Samples": 41
-    }
-  ],
-  "category_summary": {
-    "Bulk_Expansion": 4,
-    "scRNA_Expansion": 6,
-    "Tissue_Expansion": 6,
-    "Senescence_Validation": 3
-  }
+  "n_de_genes": 0
 }

@@ -1,0 +1,20 @@
+Dataset,Category,N_Samples,Score_Mean,Score_SD,Score_Median,Score_IQR
+GSE101766,Senescence Validation,276,0.0,1.0348,0.1929,1.0125
+GSE112087,Bulk Expansion,120,0.0,1.0348,-0.0604,1.6819
+GSE122459,Bulk Expansion,27,0.0,1.0348,-0.2316,0.3195
+GSE135779,scRNA Expansion,56,0.0,0.0,0.0,0.0
+GSE139358,scRNA Expansion,18,0.0,1.0348,0.277,1.8452
+GSE155405,Tissue Expansion,13,0.0,1.0348,0.2214,1.5093
+GSE162577,scRNA Expansion,3,0.0,0.0,0.0,0.0
+GSE163121_RAW,scRNA Expansion,997,0.0,1.0348,-0.1,1.2406
+GSE174188,Tissue Expansion,88,-0.0,0.0,-0.0,0.0
+GSE179633,scRNA Expansion,30,0.0,0.0,0.0,0.0
+GSE182825,Tissue Expansion,41,0.0,1.0348,0.0607,1.1882
+GSE200306,Tissue Expansion,12,0.0,1.0348,-0.0328,1.6177
+GSE228066,Bulk Expansion,45,0.0,1.0348,0.2417,1.0405
+GSE262856,Senescence Validation,42,0.0,1.0348,-0.3737,2.0724
+GSE266852_OES19443150_matrix.mtx,scRNA Expansion,995,0.0,1.0348,0.25,2.116
+GSE294496,Tissue Expansion,2,0.0,0.0,0.0,0.0
+GSE297723,Senescence Validation,6,0.0,1.0348,0.3923,1.3582
+GSE36700,Tissue Expansion,25,0.0,1.0348,-0.061,1.5599
+GSE72509,Bulk Expansion,121,0.0,1.0348,0.4308,1.9241
