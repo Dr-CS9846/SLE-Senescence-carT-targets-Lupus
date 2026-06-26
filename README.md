@@ -1,130 +1,126 @@
 # Senescence Signatures and CAR-T Targets in Systemic Lupus Erythematosus
 
-Multi-omics analysis identifying senescence-associated immune cell populations and novel CAR-T target antigens in SLE.
+Exploratory multi-dataset analysis of cellular senescence burden across SLE cohorts, with hypothesis-generating identification of senescence-enriched surface antigens as candidate CAR-T targets.
 
 ## Overview
 
-This project integrates single-cell RNA-seq, bulk transcriptomics, and proteomics data to characterize cellular senescence across SLE immune cells and identify senescence-enriched surface antigens suitable for CAR-T immunotherapy.
+This project applies the 125-gene SenMayo senescence signature (Saul et al., MSigDB) to 19 public GEO datasets spanning bulk RNA-seq, single-cell RNA-seq, and tissue transcriptomics. The goal is to characterize senescence patterns across SLE immune cells and tissues, and to identify senescence-associated surface antigens that may warrant further investigation as CAR-T targets.
 
-**Key findings:**
-- Senescent T cells and monocytes are enriched in SLE vs. healthy controls
-- Senescence burden correlates with disease activity (SLEDAI, complement levels)
-- CSPG4, CD44, and ICAM1 are prioritized as senescence-associated CAR-T targets
-- Multi-omics validation confirms senescence signature across transcriptomics and two independent proteomics platforms
+This is a computational discovery study. All findings are hypothesis-generating and require independent experimental validation.
 
-## Data
+## Data Sources
 
-### Primary cohort
-- **GSE318067**: 34 SLE patients + 34 HC, stratified by disease activity (Inactive/Mild/Moderate/Severe)
-  - Transcriptomics (Affymetrix)
-  - Proteomics (SomaLogic SOMAscan: 1,129 proteins)
-  - Proteomics (Rules Based Medicine: 282 proteins)
+All datasets are publicly available from GEO (https://www.ncbi.nlm.nih.gov/geo/). Raw data files are not included in this repository due to size (~2.5 GB); see [docs/DATA_AVAILABILITY.md](docs/DATA_AVAILABILITY.md) for download instructions.
 
-### Discovery cohorts
-- **GSE162577**: 2 SLE + 1 HC, scRNA-seq (10X Genomics)
-- **GSE142016**: 3 SLE, scRNA-seq (Illumina HiSeq)
+### Bulk RNA-seq (4 datasets, 314 samples)
+| Dataset | Samples | Description |
+|---------|---------|-------------|
+| GSE72509 | 122 | SLE + HC PBMC |
+| GSE112087 | 120 | Whole blood transcriptomics |
+| GSE122459 | 27 | PBMC gene expression |
+| GSE228066 | 45 | Activity-stratified SLE |
 
-### Tissue validation
-- **GSE36700**: 4 SLE + 5 OA + 7 RA synovial biopsies
+### Single-Cell RNA-seq (6 datasets, 107 samples)
+| Dataset | Samples | Description |
+|---------|---------|-------------|
+| GSE135779 | 56 | CD4+ T cells |
+| GSE139358 | 18 | Whole PBMC 10X |
+| GSE162577 | 3 | SLE vs HC paired |
+| GSE163121 | 5 | SLE + HC PBMC |
+| GSE179633 | 30 | Cutaneous lupus |
+| GSE266852 | -- | SLE scRNA-seq |
 
-All data are publicly available from GEO (https://www.ncbi.nlm.nih.gov/geo/).
+### Tissue Transcriptomics (6 datasets, 182 samples)
+| Dataset | Samples | Description |
+|---------|---------|-------------|
+| GSE36700 | 25 | Synovial biopsies (SLE, OA, RA) |
+| GSE155405 | 13 | Kidney (lupus nephritis) |
+| GSE174188 | 88 | Renal biopsies |
+| GSE182825 | 41 | Skin spatial transcriptomics |
+| GSE200306 | 13 | Kidney glomeruli |
+| GSE294496 | 2 | Kidney scRNA |
+
+### Senescence Reference (3 datasets, 324 samples)
+| Dataset | Samples | Description |
+|---------|---------|-------------|
+| GSE101766 | 276 | IMR90 senescence induction |
+| GSE262856 | 42 | MRC5 senescence transcriptomics |
+| GSE297723 | 6 | Aging comparison |
 
 ## Installation
 
-### Requirements
-- Python 3.8+
-- pandas, numpy, openpyxl
-
-### Setup
 ```bash
-git clone https://github.com/Dr-CS9846/sle-senescence-cart-targets.git
-cd sle-senescence-cart-targets
+git clone https://github.com/Dr-CS9846/SLE-Senescence-carT-targets-Lupus.git
+cd SLE-Senescence-carT-targets-Lupus
 pip install -r requirements.txt
 ```
 
+Requirements: Python 3.8+, pandas, numpy, scipy, openpyxl
+
 ## Usage
 
-### Generate integrated dataset
 ```bash
-python scripts/multiomics_integration.py
+# Download datasets from GEO first (see docs/DATA_AVAILABILITY.md)
+python scripts/pipeline_complete.py
 ```
 
-This creates harmonized metadata and expression matrices in `processed_data/`:
-- `01_METADATA_Integrated_All_Cohorts.csv` - Master sample table
-- `03_PROTEOMICS_SomaLogic_Expression.csv` - SomaLogic protein matrix
-- `05_SENESCENCE_Scores_GSE318067.csv` - Computed senescence scores
-
-See [RUN_INTEGRATION_PIPELINE.md](RUN_INTEGRATION_PIPELINE.md) for detailed instructions.
+This generates per-dataset senescence scores (Z-normalized) in `data/external_validation/`.
 
 ## Methods
 
-Senescence was scored using three orthogonal approaches:
-1. Canonical markers (CDKN2A, CDKN1A, TP53, RB1, E2F1)
-2. SASP genes (IL6, CXCL8, MMP3, MMP9, TNF, SERPINE1, IGFBP7)
-3. SenMayo panel (125-gene senescence signature)
+### Senescence scoring
+Senescence is scored using the **125-gene SenMayo panel** (loaded from `data/senmayo_125genes.csv`). For each sample, the pipeline computes mean expression of detected SenMayo genes (minimum 3 required), then Z-normalizes across the cohort. If fewer than 3 SenMayo genes are detected in a dataset, the pipeline falls back to the top 13 most variable genes as a proxy.
 
-CAR-T targets were prioritized by:
-- Differential expression in senescent vs. non-senescent cells (log2FC > 1.0)
-- Surface protein annotation (Human Protein Atlas)
-- Disease correlation (senescence vs. SLEDAI)
-- Cross-disease specificity (SLE vs. OA/RA)
-- Prior CAR-T development evidence
+### Normalization
+All expression data are normalized to log2(CPM + 1) before scoring.
+
+### Pipeline
+`scripts/pipeline_complete.py` is the sole analysis script. It auto-discovers datasets in the `datasets/` folder, handles multiple file formats (Series Matrix, Excel, CSV, 10X MTX sparse), and outputs standardized senescence scores.
+
+### Current pipeline results
+19/19 available datasets process successfully (see `pipeline_final.log`). Three target datasets (GSE181500, GSE226598, GSE157007) were not available for download.
 
 Full methods: [docs/METHODS.md](docs/METHODS.md)
 
-## Results
+## Limitations
 
-| Finding | Value | Source |
-|---------|-------|--------|
-| Senescent cells in CD4+ T (SLE vs. HC) | 18% vs 6% | GSE162577/142016 |
-| Senescence-SLEDAI correlation | r = 0.62, p = 0.008 | GSE318067 |
-| Top CAR-T target (CSPG4) log2FC | 2.8 (bulk), 3.1 (scRNA) | GSE318067, GSE162577 |
-| Senescence AUC (SLE vs. OA/RA synovium) | 0.84 | GSE36700 |
-| Multi-omics agreement (SomaLogic + RBM) | SASP signature robust | GSE318067 |
+- **Computational discovery only.** No functional validation (flow cytometry, killing assays, animal models). All target nominations are hypothesis-generating.
+- **No batch correction** across datasets. Senescence scores are Z-normalized per dataset, not harmonized across platforms.
+- **No scRNA-seq QC** (mitochondrial filtering, doublet detection). MTX datasets are capped at 1,000 cells for memory.
+- **Small discovery cohorts** in some scRNA-seq sets (2-3 patients) limit generalizability.
+- **Surface target plausibility** requires orthogonal validation. CD44 and ICAM1 are broadly expressed; CSPG4 is not a canonical immune marker.
+
+## Repository Structure
+
+```
+scripts/pipeline_complete.py     # Sole analysis pipeline (125-gene SenMayo)
+data/senmayo_125genes.csv        # 125-gene SenMayo panel
+data/external_validation/        # Per-dataset senescence scores (CSV)
+docs/METHODS.md                  # Detailed methods
+docs/RESULTS.md                  # Key findings
+docs/DATA_AVAILABILITY.md        # Dataset download instructions
+docs/EXTERNAL_VALIDATION.md      # Validation approach
+docs/FIGURES.md                  # Figure specifications
+pipeline_final.log               # Most recent pipeline execution log
+```
 
 ## Citation
 
-If you use this dataset or pipeline, please cite:
-
 ```bibtex
-@article{gondal2026senescence,
-  title={Senescence signatures and CAR-T targets in systemic lupus erythematosus},
-  author={Gondal, Zeshan and others},
-  journal={Lupus},
-  year={2026}
-}
-```
-
-Data integration pipeline:
-```bibtex
-@software{gondal2026multiomics,
-  title={Multi-omics integration pipeline for SLE senescence analysis},
+@software{gondal2026senescence,
+  title={Senescence signatures and CAR-T targets in SLE: multi-dataset analysis},
   author={Gondal, Zeshan},
   year={2026},
-  url={https://github.com/Dr-CS9846/sle-senescence-cart-targets}
+  url={https://github.com/Dr-CS9846/SLE-Senescence-carT-targets-Lupus}
 }
 ```
 
 ## License
 
-Code: MIT License  
+Code: MIT License
 Data: CC-BY-4.0 (publicly available GEO datasets)
-
-See [LICENSE](LICENSE) for details.
 
 ## Contact
 
-Zeshan Gondal  
+Zeshan Gondal
 Email: 011april2025@gmail.com
-
-## Acknowledgments
-
-Data from GEO (NIH/NCBI). Original studies:
-- GSE318067: Ward JM et al., NIEHS
-- GSE162577: Deng Y et al.
-- GSE142016: Mistry P et al. (NIH/NAMS)
-- GSE36700: synovial tissue studies
-
----
-
-**Status**: Manuscript submitted to Lupus (2026)

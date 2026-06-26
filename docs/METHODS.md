@@ -71,7 +71,7 @@ Senescence gene selection integrated multiple evidence sources:
    - Lupus nephritis literature (MMP3, MMP9 in kidney)
    - CAR-T target context (IL-6, TNF as immune targets)
 
-**Final 13-gene panel**: CDKN2A, CDKN1A, CDKN2B, TP53, RB1, E2F1, IL6, TNF, CXCL8, MMP3, MMP9, SERPINE1, IGFBP7
+These 13 genes form the core of the broader **125-gene SenMayo panel** (Saul et al., MSigDB) used for scoring. The full panel (`data/senmayo_125genes.csv`) spans 7 functional categories: canonical markers, SASP, cell cycle, DNA damage, apoptosis, DNA repair, and tumor suppressors. The pipeline loads all 125 genes and scores based on whichever are detected in each dataset (minimum 3 required).
 
 ---
 

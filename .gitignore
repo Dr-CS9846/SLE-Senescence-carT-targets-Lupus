@@ -36,12 +36,13 @@ env/
 .DS_Store
 Thumbs.db
 
-# Data (raw GEO downloads - too large)
-datasets/GSE*.txt
-datasets/GSE*.xlsx
-!datasets/README.md
+# Data (raw GEO downloads - too large for GitHub)
+datasets/
+
+# AI assistant config
+.claude/
 
 # Temporary
 *.tmp
 .ipynb_checkpoints/
-"datasets/" 
+pipeline_output.txt
