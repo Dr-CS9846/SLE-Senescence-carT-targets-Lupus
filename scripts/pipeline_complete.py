@@ -91,7 +91,7 @@ def apply_scrna_qc(df, dataset_id):
     return df
 
 # ---------------------------------------------------------------------------
-# Batch Correction (simplified ComBat-style Z-score alignment)
+# Batch Correction (Z-score global alignment)
 # ---------------------------------------------------------------------------
 
 def batch_correct_scores(all_scores):

@@ -14,7 +14,7 @@ All statistics below are computed by `scripts/analyze_results.py` from actual da
 | Senescence reference | 3 | N/A (cell lines) | 324 | — | 324 |
 | **Total** | **19** | **~547** | **927** | **1,992** | **2,919** |
 
-SenMayo 125-gene panel directly matched in 4 datasets (74–116/125 genes). Remaining 15 datasets used top-variable-gene fallback due to Ensembl/probe ID naming. See Methods for implications.
+Pipeline scores 2,919 units. After removing 2 samples with undefined scores (NaN), 2,917 are used in downstream statistical analysis. SenMayo 125-gene panel directly matched in 4 datasets (74–116/125 genes). Remaining 15 datasets used top-variable-gene fallback due to Ensembl/probe ID naming. See Methods for details.
 
 ---
 
