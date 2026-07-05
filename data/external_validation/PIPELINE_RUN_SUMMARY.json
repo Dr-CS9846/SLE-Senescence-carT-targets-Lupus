@@ -8,9 +8,9 @@
     "max_mito_fraction": 0.2
   },
   "batch_correction": "z-score global re-centering",
-  "datasets_processed": 19,
-  "datasets_total": 19,
-  "total_samples": 2919,
+  "datasets_processed": 28,
+  "datasets_total": 28,
+  "total_samples": 5314,
   "runtime_seconds": 381.2,
   "results": {
     "1_Bulk_Expansion": {
@@ -39,6 +39,18 @@
       "GSE101766": "SUCCESS",
       "GSE262856": "SUCCESS",
       "GSE297723": "SUCCESS"
+    },
+    "5_New_SLE_Cohorts": {
+      "GSE65391": "SUCCESS",
+      "GSE108497": "SUCCESS",
+      "GSE72326": "SUCCESS",
+      "GSE110169": "SUCCESS (partial: 5/6 target genes not evaluable, incomplete platform annotation)",
+      "GSE49454": "SUCCESS",
+      "GSE32591": "SUCCESS",
+      "GSE112943": "SUCCESS",
+      "GSE81622": "SUCCESS",
+      "GSE52471": "SUCCESS"
     }
-  }
+  },
+  "extension_note": "Extended 2026-07-05 with 9 additional independently-verified real GEO SLE datasets, bringing total to 28 datasets / 5,314 samples."
 }
