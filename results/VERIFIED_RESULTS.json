@@ -1,7 +1,7 @@
 {
-  "analysis_date": "2026-06-26 16:00",
-  "total_datasets": 19,
-  "total_samples": 2917,
+  "analysis_date": "2026-07-05 14:30",
+  "total_datasets": 28,
+  "total_samples": 5314,
   "scoring_panel": "125-gene SenMayo (Saul et al.)",
   "disease_comparison": {
     "kruskal_wallis": {
@@ -189,7 +189,495 @@
       "Spearman_r": -0.0523,
       "p_value": 0.745536,
       "Significant": "False"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE110169",
+      "N": 243,
+      "Mean_Expr": null,
+      "Spearman_r": null,
+      "p_value": null,
+      "Significant": "None"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE110169",
+      "N": 243,
+      "Mean_Expr": 10.0668,
+      "Spearman_r": 0.4989,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE110169",
+      "N": 243,
+      "Mean_Expr": null,
+      "Spearman_r": null,
+      "p_value": null,
+      "Significant": "None"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE110169",
+      "N": 243,
+      "Mean_Expr": null,
+      "Spearman_r": null,
+      "p_value": null,
+      "Significant": "None"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE110169",
+      "N": 243,
+      "Mean_Expr": null,
+      "Spearman_r": null,
+      "p_value": null,
+      "Significant": "None"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE110169",
+      "N": 243,
+      "Mean_Expr": null,
+      "Spearman_r": null,
+      "p_value": null,
+      "Significant": "None"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE112943",
+      "N": 47,
+      "Mean_Expr": 10.3249,
+      "Spearman_r": 0.396,
+      "p_value": 0.005856,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE112943",
+      "N": 47,
+      "Mean_Expr": 11.7568,
+      "Spearman_r": 0.7697,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE112943",
+      "N": 47,
+      "Mean_Expr": 11.8723,
+      "Spearman_r": 0.0104,
+      "p_value": 0.944649,
+      "Significant": "False"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE112943",
+      "N": 47,
+      "Mean_Expr": 8.3304,
+      "Spearman_r": -0.1842,
+      "p_value": 0.215169,
+      "Significant": "False"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE112943",
+      "N": 47,
+      "Mean_Expr": 10.5265,
+      "Spearman_r": 0.0793,
+      "p_value": 0.596101,
+      "Significant": "False"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE112943",
+      "N": 47,
+      "Mean_Expr": 9.9567,
+      "Spearman_r": 0.7035,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE32591",
+      "N": 93,
+      "Mean_Expr": 6.0662,
+      "Spearman_r": 0.829,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE32591",
+      "N": 93,
+      "Mean_Expr": 6.1696,
+      "Spearman_r": 0.9031,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE32591",
+      "N": 93,
+      "Mean_Expr": 5.0038,
+      "Spearman_r": 0.6886,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE32591",
+      "N": 93,
+      "Mean_Expr": 6.6436,
+      "Spearman_r": 0.867,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE32591",
+      "N": 93,
+      "Mean_Expr": 10.9449,
+      "Spearman_r": 0.808,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE32591",
+      "N": 93,
+      "Mean_Expr": 6.6161,
+      "Spearman_r": 0.1744,
+      "p_value": 0.094611,
+      "Significant": "False"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE49454",
+      "N": 177,
+      "Mean_Expr": 6.2251,
+      "Spearman_r": 0.1395,
+      "p_value": 0.064133,
+      "Significant": "False"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE49454",
+      "N": 177,
+      "Mean_Expr": 8.3712,
+      "Spearman_r": -0.3099,
+      "p_value": 2.7e-05,
+      "Significant": "True"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE49454",
+      "N": 177,
+      "Mean_Expr": 4.2487,
+      "Spearman_r": 0.0708,
+      "p_value": 0.349076,
+      "Significant": "False"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE49454",
+      "N": 177,
+      "Mean_Expr": 5.4808,
+      "Spearman_r": 0.1072,
+      "p_value": 0.155424,
+      "Significant": "False"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE49454",
+      "N": 177,
+      "Mean_Expr": 4.4273,
+      "Spearman_r": 0.0433,
+      "p_value": 0.566904,
+      "Significant": "False"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE49454",
+      "N": 177,
+      "Mean_Expr": 4.2759,
+      "Spearman_r": 0.0077,
+      "p_value": 0.919073,
+      "Significant": "False"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE52471",
+      "N": 38,
+      "Mean_Expr": 2.9368,
+      "Spearman_r": 0.5052,
+      "p_value": 0.001215,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE52471",
+      "N": 38,
+      "Mean_Expr": 12.199,
+      "Spearman_r": -0.0073,
+      "p_value": 0.965157,
+      "Significant": "False"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE52471",
+      "N": 38,
+      "Mean_Expr": 5.781,
+      "Spearman_r": -0.282,
+      "p_value": 0.08627,
+      "Significant": "False"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE52471",
+      "N": 38,
+      "Mean_Expr": 6.4238,
+      "Spearman_r": 0.7586,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE52471",
+      "N": 38,
+      "Mean_Expr": 8.8777,
+      "Spearman_r": 0.5905,
+      "p_value": 9.5e-05,
+      "Significant": "True"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE52471",
+      "N": 38,
+      "Mean_Expr": 9.3888,
+      "Spearman_r": -0.3964,
+      "p_value": 0.013738,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE65391",
+      "N": 996,
+      "Mean_Expr": 6.104,
+      "Spearman_r": 0.2929,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE65391",
+      "N": 996,
+      "Mean_Expr": 8.6109,
+      "Spearman_r": -0.0183,
+      "p_value": 0.563665,
+      "Significant": "False"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE65391",
+      "N": 996,
+      "Mean_Expr": null,
+      "Spearman_r": null,
+      "p_value": null,
+      "Significant": "None"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE65391",
+      "N": 996,
+      "Mean_Expr": 4.7219,
+      "Spearman_r": 0.2,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE65391",
+      "N": 996,
+      "Mean_Expr": 3.3881,
+      "Spearman_r": 0.0801,
+      "p_value": 0.011419,
+      "Significant": "True"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE65391",
+      "N": 996,
+      "Mean_Expr": 3.3415,
+      "Spearman_r": -0.0093,
+      "p_value": 0.768488,
+      "Significant": "False"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE72326",
+      "N": 238,
+      "Mean_Expr": 6.0621,
+      "Spearman_r": 0.1444,
+      "p_value": 0.025876,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE72326",
+      "N": 238,
+      "Mean_Expr": 8.3442,
+      "Spearman_r": -0.0989,
+      "p_value": 0.128055,
+      "Significant": "False"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE72326",
+      "N": 238,
+      "Mean_Expr": 4.2542,
+      "Spearman_r": 0.0918,
+      "p_value": 0.158079,
+      "Significant": "False"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE72326",
+      "N": 238,
+      "Mean_Expr": 5.546,
+      "Spearman_r": 0.106,
+      "p_value": 0.102708,
+      "Significant": "False"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE72326",
+      "N": 238,
+      "Mean_Expr": 4.4255,
+      "Spearman_r": 0.0408,
+      "p_value": 0.530609,
+      "Significant": "False"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE72326",
+      "N": 238,
+      "Mean_Expr": 4.2811,
+      "Spearman_r": -0.0055,
+      "p_value": 0.933141,
+      "Significant": "False"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE81622",
+      "N": 55,
+      "Mean_Expr": 648.7478,
+      "Spearman_r": 0.3014,
+      "p_value": 0.025355,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE81622",
+      "N": 55,
+      "Mean_Expr": 3195.7423,
+      "Spearman_r": -0.2967,
+      "p_value": 0.027843,
+      "Significant": "True"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE81622",
+      "N": 55,
+      "Mean_Expr": 122.5023,
+      "Spearman_r": -0.3124,
+      "p_value": 0.020226,
+      "Significant": "True"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE81622",
+      "N": 55,
+      "Mean_Expr": 191.0296,
+      "Spearman_r": 0.2148,
+      "p_value": 0.115306,
+      "Significant": "False"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE81622",
+      "N": 55,
+      "Mean_Expr": 130.5292,
+      "Spearman_r": 0.2649,
+      "p_value": 0.050676,
+      "Significant": "False"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE81622",
+      "N": 55,
+      "Mean_Expr": 121.638,
+      "Spearman_r": 0.0188,
+      "p_value": 0.891458,
+      "Significant": "False"
+    },
+    {
+      "Target": "CD38",
+      "Dataset": "GSE108497",
+      "N": 510,
+      "Mean_Expr": 5.8048,
+      "Spearman_r": 0.5276,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "CD44",
+      "Dataset": "GSE108497",
+      "N": 510,
+      "Mean_Expr": 9.0965,
+      "Spearman_r": 0.4434,
+      "p_value": 0.0,
+      "Significant": "True"
+    },
+    {
+      "Target": "CSPG4",
+      "Dataset": "GSE108497",
+      "N": 510,
+      "Mean_Expr": 0.7278,
+      "Spearman_r": 0.0567,
+      "p_value": 0.200906,
+      "Significant": "False"
+    },
+    {
+      "Target": "ICAM1",
+      "Dataset": "GSE108497",
+      "N": 510,
+      "Mean_Expr": 5.3244,
+      "Spearman_r": 0.0938,
+      "p_value": 0.034286,
+      "Significant": "True"
+    },
+    {
+      "Target": "VCAM1",
+      "Dataset": "GSE108497",
+      "N": 510,
+      "Mean_Expr": 0.9547,
+      "Spearman_r": -0.0544,
+      "p_value": 0.219737,
+      "Significant": "False"
+    },
+    {
+      "Target": "EGFR",
+      "Dataset": "GSE108497",
+      "N": 510,
+      "Mean_Expr": 0.8995,
+      "Spearman_r": -0.0052,
+      "p_value": 0.907011,
+      "Significant": "False"
     }
   ],
-  "n_de_genes": 0
+  "n_de_genes": 0,
+  "target_correlation_datasets": 12,
+  "note": "Extended 2026-07-05: added 9 newly acquired, independently verified real GEO SLE datasets (GSE65391, GSE108497, GSE72326, GSE110169, GSE49454, GSE32591, GSE112943, GSE81622, GSE52471) to the original 19-dataset pipeline. Target-gene correlations now computed across 12 independent datasets (3 original + 9 new)."
 }
