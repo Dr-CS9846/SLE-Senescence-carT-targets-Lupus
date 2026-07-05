@@ -1,10 +1,10 @@
 # Data Manifest
 
-Raw GEO datasets are stored locally (~2.5 GB), not committed to this repository. See `docs/DATA_AVAILABILITY.md` for download instructions.
+Raw GEO datasets are stored locally, not committed to this repository. See `docs/DATA_AVAILABILITY.md` for download instructions.
 
-**Pipeline Status**: 19/19 datasets successfully processed (2,919 samples/cells)  
-**Last Updated**: June 26, 2026  
-**Pipeline Version**: v9 (`scripts/pipeline_complete.py`)
+**Pipeline Status**: 28/28 datasets successfully processed (5,314 samples/cells) — 19 Phase 1 + 9 Phase 2
+**Last Updated**: July 5, 2026
+**Pipeline Version**: v9 Phase 1 (`scripts/pipeline_complete.py`) + Phase 2 direct-acquisition script
 
 ---
 
@@ -49,6 +49,22 @@ Raw GEO datasets are stored locally (~2.5 GB), not committed to this repository.
 | GSE262856 | 42 | TSV | MRC5 senescence transcriptomics | ✅ Processed |
 | GSE297723 | 6 | CSV (raw counts) | Aging comparison | ✅ Processed |
 
+### Category 5: New SLE Cohorts — Phase 2, added 2026-07-05 (9 datasets, 2,397 samples)
+
+| Dataset | Samples | Format | Tissue/Context | Status |
+|---------|---------|--------|-----------------|--------|
+| GSE65391 | 996 | Series Matrix (microarray) | Blood, pediatric SLE longitudinal | ✅ Processed (114/125 SenMayo matched) |
+| GSE108497 | 510 | Supplementary normalized-data file | Blood, lupus pregnancy | ✅ Processed (116/125 SenMayo matched) |
+| GSE72326 | 238 | Series Matrix (microarray) | Blood, lupus nephritis biomarker | ✅ Processed (116/125 SenMayo matched) |
+| GSE110169 | 243 | Series Matrix (microarray) | Blood, SLE+RA | ⚠️ Processed (17/125 SenMayo matched; CD44 only among target genes — see Limitations) |
+| GSE49454 | 177 | Series Matrix (microarray) | Blood, IFN signature | ✅ Processed (116/125 SenMayo matched) |
+| GSE32591 | 93 | Series Matrix (microarray) | Kidney, lupus nephritis | ✅ Processed (110/125 SenMayo matched) |
+| GSE112943 | 47 | Series Matrix (microarray) | Skin + kidney, cutaneous lupus + nephritis | ✅ Processed (116/125 SenMayo matched) |
+| GSE81622 | 55 | Series Matrix (microarray) | PBMC, SLE ± nephritis | ✅ Processed (116/125 SenMayo matched) |
+| GSE52471 | 38 | Series Matrix (microarray) | Skin, discoid lupus vs. psoriasis | ✅ Processed (76/125 SenMayo matched) |
+
+Every accession in this category was independently verified against NCBI's E-utilities API (title, organism, sample count, platform) before inclusion — not sourced from memory. See `README.md` §1.3 for the verification methodology.
+
 ---
 
 ## Pipeline Output
@@ -87,8 +103,9 @@ data/external_validation/
 
 ## Verification
 
-- [x] All 19 datasets present in datasets/ folder
-- [x] Pipeline processes all 19 datasets successfully
-- [x] Senescence scores generated for all 19 datasets
+- [x] All 28 datasets present / downloaded
+- [x] Pipeline processes all 28 datasets successfully (1 dataset, GSE110169, with partial target-gene coverage — disclosed, not hidden)
+- [x] Senescence scores generated for all 28 datasets
 - [x] Batch correction applied across datasets
 - [x] scRNA-seq QC applied to MTX-loaded datasets
+- [x] All 9 Phase 2 accessions independently verified against NCBI E-utilities before processing

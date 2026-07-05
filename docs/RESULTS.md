@@ -12,9 +12,11 @@ All statistics below are computed by `scripts/analyze_results.py` from actual da
 | Single-cell RNA-seq | 6 | ~76 | 107 | 1,992 | 2,099 |
 | Tissue transcriptomics | 6 | ~161 | 182 | — | 182 |
 | Senescence reference | 3 | N/A (cell lines) | 324 | — | 324 |
-| **Total** | **19** | **~547** | **927** | **1,992** | **2,919** |
+| **Phase 1 Total** | **19** | **~547** | **927** | **1,992** | **2,919** |
+| **Phase 2 (added 2026-07-05)** | **9** | ~2,397 | 2,397 | — | **2,397** |
+| **Combined Total** | **28** | | | | **5,314** |
 
-Pipeline scores 2,919 units. After removing 2 samples with undefined scores (NaN), 2,917 are used in downstream statistical analysis. SenMayo 125-gene panel directly matched in 4 datasets (74–116/125 genes). Remaining 15 datasets used top-variable-gene fallback due to Ensembl/probe ID naming. See Methods for details.
+Phase 1 scores 2,919 units (2,917 used in downstream statistical analysis after removing 2 undefined scores). SenMayo 125-gene panel directly matched in 4 Phase 1 datasets (74–116/125 genes); remaining 15 Phase 1 datasets used top-variable-gene fallback due to Ensembl/probe ID naming. Phase 2 datasets (see `README.md` §1.1) have substantially higher direct SenMayo match rates (76–116/125 in 8 of 9 datasets) since they were specifically selected on Illumina/Affymetrix platforms with clean HUGO gene-symbol annotation. See Methods for details.
 
 ---
 
@@ -41,7 +43,7 @@ Source: `results/VERIFIED_RESULTS.json` (disease_comparison key)
 
 ## CAR-T Candidate Surface Antigen Correlations
 
-Spearman rank correlations between target expression and senescence score, computed in 3 datasets with HUGO gene names:
+**Phase 1 (original 3 anchor datasets)** — Spearman rank correlations between target expression and senescence score:
 
 | Target | GSE228066 (bulk, n=45) | GSE139358 (scRNA, n=18) | GSE182825 (tissue, n=41) | Datasets Significant |
 |--------|----------------------|------------------------|-------------------------|---------------------|
@@ -54,9 +56,22 @@ Spearman rank correlations between target expression and senescence score, compu
 
 **Combined target score**: CD38+CD44+CSPG4 mean expression correlates with senescence at r=0.576, p<0.0001 (GSE228066), stronger than any individual target.
 
-CD38, CD44, CSPG4, and ICAM1 show consistent positive correlation with senescence burden across independent platforms and tissue types. The combined CD38+CD44+CSPG4 score (r=0.576) outperforms individual markers, supporting a multi-target discovery approach. Functional validation studies are planned (see Methods: External Validation Plan).
+**Phase 2 (9 additional real datasets, added 2026-07-05)** — the same six targets tested independently across GSE65391, GSE108497, GSE72326, GSE110169 (CD44 only — see Limitations), GSE49454, GSE32591, GSE112943, GSE81622, and GSE52471. Full per-dataset numbers: `results/tables/cart_target_statistics.csv`.
 
-Source: `results/tables/cart_target_statistics.csv`
+**Combined consensus across all 12 datasets with target-gene data (3 Phase 1 + 9 Phase 2):**
+
+| Target | Significant, positive | Significant, negative | Not significant | Interpretation |
+|--------|----|----|----|----|
+| CD38 | 9 | 0 | 2 | Strongest, most consistent — unanimous direction where significant |
+| ICAM1 | 6 | 0 | 5 | Consistent positive direction |
+| VCAM1 | 4 | 0 | 7 | Consistent positive direction, weaker effect size |
+| CD44 | 6 | 2 | 4 | Directionally mixed — likely tissue/compartment-dependent |
+| CSPG4 | 3 | 1 | 6 | Directionally mixed, exploratory |
+| EGFR | 2 | 1 | 8 | Weakest, least consistent — supports deprioritization |
+
+CD38 is now the single most consistent, replicated finding across 12 independent datasets spanning blood, kidney, and skin. CD44 and CSPG4 show significant associations in *both* directions depending on dataset/tissue, which is reported honestly here rather than forced into a single "validated positive marker" framing — this points to compartment-specific regulation as a follow-up question rather than undermining the overall finding. Functional validation studies (flow cytometry, functional cytotoxicity assays) are the necessary next step and are not performed in this repository.
+
+Source: `results/tables/cart_target_statistics.csv`, `results/VERIFIED_RESULTS.json`
 
 ---
 

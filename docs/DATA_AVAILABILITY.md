@@ -2,7 +2,7 @@
 
 ## Raw Data
 
-Raw GEO datasets (~2.5 GB) are not included in this repository. All 19 datasets are publicly available from the NCBI Gene Expression Omnibus at https://www.ncbi.nlm.nih.gov/geo/.
+Raw GEO datasets are not included in this repository. All 28 datasets (19 Phase 1 + 9 Phase 2, see README §1.3) are publicly available from the NCBI Gene Expression Omnibus at https://www.ncbi.nlm.nih.gov/geo/.
 
 ## Download Instructions
 
@@ -38,6 +38,22 @@ Download supplementary files from each GEO accession page:
 - [GSE262856](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE262856)
 - [GSE297723](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297723)
 
+### Phase 2 — Expansion Cohort (9 datasets, added 2026-07-05)
+
+Downloaded directly from GEO's FTP series-matrix mirror (`https://ftp.ncbi.nlm.nih.gov/geo/series/GSExxnnn/GSExxxxxx/matrix/`), with the exception of GSE108497 whose usable expression data is in its `suppl/` normalized-data file rather than its series matrix (its series matrix table is empty; see repository note in `data/external_validation/5_New_SLE_Cohorts/`).
+
+- [GSE65391](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE65391) — pediatric SLE longitudinal whole blood
+- [GSE108497](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE108497) — lupus pregnancy immune monitoring
+- [GSE72326](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE72326) — lupus nephritis neutrophil biomarker
+- [GSE110169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE110169) — SLE + RA whole blood
+- [GSE49454](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49454) — SLE interferon signatures
+- [GSE32591](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE32591) — lupus nephritis kidney
+- [GSE112943](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112943) — cutaneous lupus skin + lupus nephritis kidney
+- [GSE81622](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE81622) — SLE ± nephritis PBMC
+- [GSE52471](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE52471) — discoid lupus vs. psoriasis skin
+
+Platform annotation (probe → gene symbol) for these 9 datasets was resolved live from NCBI (`https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=<GPL>&targ=self&form=text&view=full`) for GPL10558, GPL14663, and GPL571. GPL13667's annotation download was incomplete after repeated attempts (see README §2.8); GSE110169's CD44 result is unaffected, the other five target genes are marked not evaluable for that dataset only.
+
 ## Running the Pipeline
 
 ```bash
@@ -46,7 +62,7 @@ python scripts/pipeline_complete.py
 python scripts/analyze_results.py
 ```
 
-Pipeline processes all 19 datasets in ~3 minutes. Results are written to `data/external_validation/` (senescence scores) and `results/` (figures, tables, statistics).
+Phase 1 processes 19 datasets in ~3 minutes. Phase 2's 9 datasets were processed via a separate script that downloads directly from GEO and resolves platform annotation live; see README §2.7 for the exact commands. Results are written to `data/external_validation/` (senescence scores) and `results/` (figures, tables, statistics).
 
 ## Processed Outputs
 

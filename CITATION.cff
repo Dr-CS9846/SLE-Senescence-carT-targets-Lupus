@@ -6,8 +6,9 @@ authors:
     email: 011april2025@gmail.com
 abstract: |
   Multi-dataset transcriptomic analysis applying the SenMayo 125-gene senescence
-  signature across 19 public GEO datasets in SLE. Identifies senescence-associated
-  surface antigens (CD38, CD44, CSPG4) as candidate targets for further investigation.
+  signature across 28 public GEO datasets (5,314 samples) in SLE. Identifies
+  senescence-associated surface antigens (CD38, ICAM1, VCAM1, with CD44 and CSPG4
+  showing tissue-dependent associations) as candidate targets for further investigation.
 keywords:
   - systemic lupus erythematosus
   - cellular senescence
@@ -15,6 +16,6 @@ keywords:
   - SenMayo
   - multi-dataset integration
 license: MIT
-version: 1.0.0
-date-released: "2026-06-26"
+version: 2.0.0
+date-released: "2026-07-05"
 url: "https://github.com/Dr-CS9846/SLE-Senescence-carT-targets-Lupus"

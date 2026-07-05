@@ -60,7 +60,7 @@ PubMed and GEO searches (June 1–24, 2026) using terms: "systemic lupus erythem
 | 18 | GSE262856 | Senescence Ref | Illumina | MRC5 fibroblasts | — | 42 | — | 0/125 (fallback) | 2024 |
 | 19 | GSE297723 | Senescence Ref | Illumina | Mouse lung | — | 6 | — | 0/125 (fallback) | 2025 |
 
-### Count Summary
+### Count Summary — Phase 1 (original discovery cohort)
 
 | Metric | Bulk RNA-seq | scRNA-seq | Tissue | Senescence Ref | Total |
 |--------|-------------|-----------|--------|----------------|-------|
@@ -71,6 +71,10 @@ PubMed and GEO searches (June 1–24, 2026) using terms: "systemic lupus erythem
 | Total scored units | 314 | 2,099 | 182 | 324 | **2,919** |
 
 **Important distinction**: "Samples" refers to biological specimens (one per patient in bulk RNA-seq). "Cells" refers to individual cells in scRNA-seq datasets (many cells per patient). The 2,919 total includes both samples and cells. Patient-level analyses (disease comparisons, correlations) use sample-level data. Cell-level analyses (QC, heterogeneity) use single-cell data.
+
+### Phase 2 — Expansion Cohort (added 2026-07-05)
+
+Nine additional real, independently-verified GEO datasets (2,397 samples) were added specifically to strengthen the CAR-T target-gene correlation analysis, since only 3 of the 19 Phase 1 datasets had annotation clean enough for direct HUGO-symbol target-gene extraction. Full accession list, platforms, and per-dataset SenMayo match rates are in the top-level [`README.md`](../README.md) §1.1 (Phase 2 table) rather than duplicated here, to avoid the two tables drifting out of sync. **Combined total: 28 datasets, 5,314 samples/cells.**
 
 ---
 
