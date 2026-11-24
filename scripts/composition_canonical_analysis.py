@@ -234,7 +234,7 @@ DATASETS = {
 
 
 def main():
-    s3_rows, s7_rows, s4_rows = [], [], []
+    s3_rows, s7_rows, s4_rows, combined_rows = [], [], [], []
     for acc, (kind, loader, gpl) in DATASETS.items():
         print(f"\n=== {acc} ===")
         try:
@@ -249,6 +249,27 @@ def main():
         comp = composition_scores(gene_expr)
         print(f"  full SenMayo matched={n_full}/125, canonical matched={n_canon}/{len(CANONICAL_GENES)}, "
               f"excluded-subset matched={n_excl}/{len(EXCLUDED_GENES)}")
+
+        # Multi-dataset combined score (answers editor/reviewer 1: "multi-target
+        # analysis done in only one dataset"). Same definition as the original
+        # GSE228066 analysis (DEC-08, corrected): raw mean of each target's
+        # own expression scale, no z-scoring, using the same gene_expr matrix
+        # already loaded for this dataset's composition/canonical analysis.
+        combo3 = ['CD38', 'CD44', 'CSPG4']
+        if all(t in gene_expr.index for t in combo3):
+            common_combo = gene_expr.columns.intersection(full_score.index)
+            if len(common_combo) >= 5:
+                combined = gene_expr.loc[combo3, common_combo].mean(axis=0)
+                r_comb, p_comb = stats.spearmanr(combined, full_score[common_combo])
+                single_rs = {}
+                for t in combo3:
+                    r_t, p_t = stats.spearmanr(gene_expr.loc[t, common_combo], full_score[common_combo])
+                    single_rs[t] = (round(float(r_t), 4), round(float(p_t), 6))
+                combined_rows.append({'Dataset': acc, 'N': len(common_combo),
+                                       'r_combined': round(float(r_comb), 4), 'p_combined': round(float(p_comb), 6),
+                                       'r_CD38': single_rs['CD38'][0], 'p_CD38': single_rs['CD38'][1],
+                                       'r_CD44': single_rs['CD44'][0], 'p_CD44': single_rs['CD44'][1],
+                                       'r_CSPG4': single_rs['CSPG4'][0], 'p_CSPG4': single_rs['CSPG4'][1]})
 
         for t in TARGETS:
             if t not in gene_expr.index:
@@ -297,8 +318,12 @@ def main():
     pd.DataFrame(s3_rows).to_csv(os.path.join(OUT_DIR, 'stat_S3.csv'), index=False)
     pd.DataFrame(s7_rows).to_csv(os.path.join(OUT_DIR, 'stat_S7.csv'), index=False)
     pd.DataFrame(s4_rows).to_csv(os.path.join(OUT_DIR, 'stat_S4.csv'), index=False)
+    pd.DataFrame(combined_rows).to_csv(os.path.join(OUT_DIR, 'stat_combined_multidataset.csv'), index=False)
     print(f"\n1.8.10 -> stat_S3.csv ({len(s3_rows)} rows), stat_S7.csv ({len(s7_rows)} rows)")
     print(f"1.8.9  -> stat_S4.csv ({len(s4_rows)} rows)")
+    print(f"multi-dataset combined score -> stat_combined_multidataset.csv ({len(combined_rows)} rows)")
+    if combined_rows:
+        print(pd.DataFrame(combined_rows).to_string(index=False))
     print("\nExcluded from this script (see docstring): GSE108497 (download-size), GSE110169 (sensitivity-only, DEC-04).")
 
 
