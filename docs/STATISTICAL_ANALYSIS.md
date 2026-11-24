@@ -252,10 +252,76 @@ item, not fixed); S2, S6, S8 (already P2 in Part A).
 
 ## Part C — Traceability
 
-*Not yet completed. To be filled in after step 1.8, mapping every Abstract and Results number
-to its source file and cell.*
+Every number below is quoted as it appears in the manuscript (revision draft
+`REVISED_MANUSCRIPT_v2_2026-11-25.md`), with its source file and, where the file is small enough
+to name one, the row or cell.
+
+| Manuscript location | Number quoted | Source file | Row / cell |
+|---|---|---|---|
+| Abstract, Results | CD38 pooled r = 0.43 (95% CI 0.24–0.59), significant in 9 of 11 datasets | `results/tables/stat_pooled_by_target.csv`; `stat_confirmatory_per_dataset.csv` | `Target == 'CD38'` row; count of `Significant == True & Spearman_r > 0` for CD38 |
+| Abstract, Results | ICAM1 significant in 6 of 11 datasets | `stat_confirmatory_per_dataset.csv` | `Target == 'ICAM1'` rows |
+| Abstract, Results | VCAM1 significant in 4 of 11 datasets | `stat_confirmatory_per_dataset.csv` | `Target == 'VCAM1'` rows |
+| Abstract, Results | Synovium Kruskal-Wallis H = 14.013, p = 0.0073 | `results/tables/stat_synovium_omnibus.txt` | first line |
+| Abstract, Results | Combined score r = 0.576, p < 0.0001 (GSE228066) | `results/tables/stat_combined_summary.txt` | sole line |
+| Abstract | Single-marker range r = 0.23–0.40 | `results/tables/stat_combined_singles.csv` | CSPG4 (min) and CD38 (max) rows |
+| Results, CAR-T Target Associations | Per-dataset r/p for CD38, ICAM1, VCAM1, CD44, CSPG4, EGFR (e.g. GSE228066, GSE108497, GSE32591, GSE139358, GSE52471) | `results/tables/cart_target_statistics.csv` | filter by `Target` and `Dataset` |
+| Results, Pooled estimates paragraph | Pooled r, 95% CI, I² for all six targets | `stat_pooled_by_target.csv` | one row per target |
+| Results, Pooled estimates paragraph | Blood (7 datasets) and skin (2 datasets) pooled r by target; kidney (GSE32591) per-target | `results/tables/stat_by_tissue.csv` | filter by `Tissue` |
+| Results, Pooled estimates paragraph | Leave-one-dataset-out ranges | `results/tables/stat_loo.csv` | one row per target |
+| Results, Pooled estimates paragraph | GSE110169 added to CD44 (r = 0.34 with vs 0.32 without — manuscript rounds to 2 d.p.; script output is 0.335 vs 0.319, see Deviation note) | `results/tables/stat_S1.csv` | `variant` column |
+| Results, Pooled estimates paragraph | Excluding pre-2015 datasets: CD38 r = 0.37, ICAM1 r = 0.18 | `results/tables/stat_S9.csv` | `Target == 'CD38'` / `'ICAM1'` rows |
+| Results, Table 2 | Dataset counts per target (tested / significant positive / negative / not significant) | `cart_target_statistics.csv` | aggregated manually by target; not produced by a dedicated script in this revision — a reviewer can recompute it directly from this file |
+| Results, Disease-Specific Senescence Burden | Pairwise SLE-vs-comparator p (unadjusted and Holm), Cliff's delta, delta CI | `results/tables/stat_synovium.csv` | one row per comparison |
+| Results, Disease-Specific Senescence Burden | ROC AUC = 0.679, bootstrap 95% CI | `stat_synovium_omnibus.txt` | second line |
+| Results, Multi-Target Senescence Scoring | Combined vs. single-marker bootstrap CIs (which comparisons exclude 0) | `results/tables/stat_combined_bootstrap.csv` | `excludes_zero` column |
+| Results, Multi-Target Senescence Scoring | Combination-search rank of CD38+CD44+CSPG4 (6th of 20); top combination CD38+ICAM1+VCAM1 (r = 0.665) | `results/tables/stat_combination_search.csv` | `rank` column |
+| Limitations / Pooled estimates paragraph | Composition adjustment flips significance (e.g. GSE139358 CD38 r=0.71 unadjusted to r=-0.38 adjusted) | `results/tables/stat_S4.csv` | `Dataset == 'GSE139358' & Target == 'CD38'` |
+| Limitations | Composition/canonical sensitivity covers 5 of 12 confirmatory datasets | `results/tables/stat_S3.csv`, `stat_S4.csv`, `stat_S7.csv` | unique `Dataset` values in each file |
+| Methods, dataset registry | GEO metadata (title, organism, n, platform, release date) for the 12 target-correlation datasets | `docs/dataset_registry.csv` | one row per accession |
 
 ## Part D — How to check
 
-*Not yet completed. To be filled in at step 4 (statistician hand-off), after Parts B and C
-exist.*
+**Goal: an independent reviewer should be able to do this in about an hour, without running
+anything, plus an optional faster re-run.**
+
+1. **Confirm the plan preceded the results.** `git log --oneline` — commit `1b66bc0` ("Pre-specify
+   statistical analysis plan...", tagged `sap-v1`) must appear before commit `c91acd2` ("Add
+   confirmatory and sensitivity statistical analysis..."), which it does in this repository's
+   history.
+2. **Read Part A against Part B.** Three deviations are disclosed in Part B: (i) a wording error
+   in the first version of DEC-08, corrected before any manuscript number was affected; (ii) a
+   real labelling bug in `analyze_results.py`'s synovium figure code, which changes one pair of
+   numbers now in the manuscript (H and p); (iii) composition/canonical sensitivity covering 5 of
+   12 datasets instead of all 12, with the reason (a pre-existing mismatch between
+   `process_phase2_datasets.py` and the already-committed results table for 7 other datasets,
+   found, tested, and deliberately left unresolved rather than risked). No other deviation exists.
+3. **Pick three numbers from the Abstract or Results and find them in Part C.** Each row names
+   the exact source file and, for the smaller files, the exact row or column.
+4. **Check the formulas against `scripts/statistical_analysis.py`'s `fisher_pool()` function**
+   (also duplicated, identically, in `scripts/sensitivity_analysis.py`): Fisher z transform,
+   DerSimonian-Laird tau², Hartung-Knapp-Sidik-Jonkman confidence interval, Benjamini-Hochberg
+   (`statsmodels.stats.multitest`, method `fdr_bh`) and Holm (method `holm`) corrections, seed 42
+   for every bootstrap and random-triplet procedure (`np.random.default_rng(42)` in
+   `sensitivity_analysis.py`).
+5. **Confirm every sensitivity analysis S1–S9 is reported somewhere**, even if only as a stated
+   limitation: S1 (`stat_S1.csv`), S2 (not run — Part A, P2, stated as a limitation), S3/S7
+   (`stat_S3.csv`, `stat_S7.csv`), S4 (`stat_S4.csv`), S6 (not run — P2), S8 (not run — P2), S9
+   (`stat_S9.csv`).
+6. **Optional, fastest check (about 2 minutes, no network, no raw data needed):**
+   `pip install -r requirements.txt` then `python scripts/statistical_analysis.py` from the
+   repository root. This script reads only the already-committed
+   `results/tables/cart_target_statistics.csv` and reproduces `stat_confirmatory_per_dataset.csv`,
+   `stat_pooled_by_target.csv`, `stat_loo.csv`, and `stat_by_tissue.csv` exactly.
+7. **Optional, slower check (requires the raw GEO files locally, per `docs/DATA_AVAILABILITY.md`;
+   not needed for the check above):** `scripts/sensitivity_analysis.py` and
+   `scripts/composition_canonical_analysis.py` reproduce the synovium, combined-score,
+   combination-search, and composition/canonical outputs, but need the raw per-dataset files
+   (gitignored, not in this repository, downloadable from GEO) present locally first. This is the
+   same raw-data arrangement the repository has always used (see README Part 2.7); it is not
+   specific to this revision's new scripts.
+8. **What this check does not re-verify:** whether `process_phase2_datasets.py`, if re-run fresh
+   today for GSE65391, GSE72326, GSE49454, GSE112943, GSE81622, or GSE110169, would reproduce the
+   already-committed `cart_target_statistics.csv` values for those six datasets. It was found,
+   during this revision, that it currently would not (Part B, Deviation 4), and that script was
+   deliberately left unmodified rather than changed mid-revision. This is stated here so the
+   reviewer does not discover it independently and wonder why it wasn't mentioned.

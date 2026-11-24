@@ -50,7 +50,7 @@ PubMed and GEO searches (June 1–24, 2026) using terms: "systemic lupus erythem
 | 8 | GSE163121 | scRNA-seq | 10x Genomics Chromium | PBMC | 5 (3 SLE + 2 HC) | — | 997 (post-QC) | 74/125 | 2021 |
 | 9 | GSE179633 | scRNA-seq | Illumina NovaSeq 6000 | Skin (DLE) | ~30 | 30 | — | 0/125 (fallback) | 2022 |
 | 10 | GSE266852 | scRNA-seq | 10x Genomics Chromium | PBMC | Unknown | — | 995 (post-QC) | 0/125 (fallback) | 2024 |
-| 11 | GSE36700 | Tissue | Affymetrix HG-U133+ 2.0 | Synovium | 25 (4 SLE, 5 OA, 7 RA, 5 MIC, 4 PSO) | 25 | — | 0/125 (fallback) | 2012 |
+| 11 | GSE36700 | Tissue | Affymetrix HG-U133+ 2.0 | Synovium | 25 (4 SLE, 5 OA, 7 RA, 5 MIC, 4 SA [seronegative arthritis]) | 25 | — | 0/125 (fallback) | 2012 |
 | 12 | GSE155405 | Tissue | Illumina | Kidney (LN) | ~13 | 13 | — | 0/125 (fallback) | 2021 |
 | 13 | GSE174188 | Tissue | Illumina NovaSeq 6000 | Renal biopsy | ~88 | 88 | — | 0/125 (fallback) | 2022 |
 | 14 | GSE182825 | Tissue | NanoString nCounter | Skin | ~20 | 41 | — | 113/125 | 2022 |
@@ -169,7 +169,7 @@ This approach is well-suited for heterogeneous multi-platform integration where 
 
 ### Disease Group Comparisons (GSE36700)
 
-- Kruskal-Wallis test: non-parametric comparison across SLE (n=4), OA (n=5), RA (n=7), MIC (n=5), PSO (n=4)
+- Kruskal-Wallis test: non-parametric comparison across SLE (n=4), OA (n=5), RA (n=7), MIC (n=5), SA (n=4) [seronegative arthritis; this group's samples are labelled "SA" in the GEO sample IDs, not "PSO"]
 - Pairwise Mann-Whitney U tests (SLE vs each group)
 - ROC curve: SLE vs non-SLE classification by senescence score
 

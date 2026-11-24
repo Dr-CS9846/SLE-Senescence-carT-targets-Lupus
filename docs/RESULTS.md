@@ -26,16 +26,17 @@ Phase 1 scores 2,919 units (2,917 used in downstream statistical analysis after 
 
 Senescence scores compared across 5 disease groups:
 
-| Comparison | N (SLE) | N (Other) | Effect Size | Mann-Whitney U | p-value | Significance |
-|------------|---------|-----------|-------------|----------------|---------|--------------|
-| SLE vs OA | 4 | 5 | +1.495 | 18 | 0.064 | Trend |
-| SLE vs RA | 4 | 7 | -0.548 | 11 | 0.649 | Not significant |
-| SLE vs MIC | 4 | 5 | +1.119 | 16 | 0.190 | Not significant |
+| Comparison | N (SLE) | N (Other) | Effect Size | Mann-Whitney U | p-value (unadjusted) | p-value (Holm) | Significance |
+|------------|---------|-----------|-------------|----------------|---------|---------|--------------|
+| SLE vs OA | 4 | 5 | +1.495 | 18 | 0.063 | 0.254 | Not significant after Holm correction |
+| SLE vs RA | 4 | 7 | -0.548 | 11 | 0.648 | 0.686 | Not significant |
+| SLE vs MIC | 4 | 5 | +1.119 | 16 | 0.190 | 0.571 | Not significant |
+| SLE vs SA | 4 | 4 | — | — | 0.343 | 0.686 | Not significant |
 
-- **Kruskal-Wallis (all groups)**: H = 12.69, **p = 0.005** (significant overall difference)
+- **Kruskal-Wallis (all 5 groups: SLE, OA, RA, MIC, SA)**: H = 14.013, **p = 0.0073** (significant overall difference)
 - **ROC (SLE vs non-SLE)**: AUC = 0.679
 
-The significant Kruskal-Wallis (p=0.005) confirms senescence heterogeneity across disease groups in synovial tissue. SLE vs OA trending effect (+1.495, p=0.064) warrants validation in larger tissue cohorts.
+The significant Kruskal-Wallis omnibus test (p=0.0073) indicates senescence heterogeneity across disease groups in synovial tissue, but no individual pairwise comparison of SLE against a comparator group survives Holm correction. SLE vs OA has the smallest unadjusted p-value (0.063) and warrants validation in larger tissue cohorts. [Corrected 2026-11-25: an earlier version of this table omitted the SA (seronegative arthritis) group — its sample IDs ("SA1"-"SA4") were not matched by the original group-labelling code — and reported H=12.69, p=0.005 from the resulting 4-group calculation. See docs/STATISTICAL_ANALYSIS.md Part B.]
 
 Source: `results/VERIFIED_RESULTS.json` (disease_comparison key)
 

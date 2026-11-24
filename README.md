@@ -38,7 +38,7 @@ Twenty-eight datasets were assembled in two phases (see [§1.3](#13-how-we-got-t
 | [GSE163121](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163121) | scRNA-seq | PBMC | 997 | 10x Genomics Chromium | **74/125 direct** |
 | [GSE179633](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE179633) | scRNA-seq | Skin (discoid lupus) | 30 | Illumina NovaSeq 6000 | fallback |
 | [GSE266852](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266852) | scRNA-seq | PBMC | 995 | 10x Genomics Chromium | fallback |
-| [GSE36700](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE36700) | Tissue | Synovium (SLE/OA/RA/MIC/PSO) | 25 | Affymetrix HG-U133+ 2.0 | fallback |
+| [GSE36700](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE36700) | Tissue | Synovium (SLE/OA/RA/MIC/SA) | 25 | Affymetrix HG-U133+ 2.0 | fallback |
 | [GSE155405](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE155405) | Tissue | Kidney (lupus nephritis) | 13 | Illumina | fallback |
 | [GSE174188](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE174188) | Tissue | Renal biopsy | 88 | Illumina NovaSeq 6000 | fallback |
 | [GSE182825](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE182825) | Tissue | Skin | 41 | NanoString nCounter | **113/125 direct** |
@@ -57,7 +57,7 @@ Twenty-eight datasets were assembled in two phases (see [§1.3](#13-how-we-got-t
 | [GSE72326](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE72326) | Lupus nephritis neutrophil biomarker, blood | 238 | Illumina HumanHT-12 v4 | 116/125 |
 | [GSE110169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE110169) | SLE + rheumatoid arthritis whole blood | 243 | Affymetrix HG-U219 | 17/125 (partial — see [§2.8](#28-known-limitations)) |
 | [GSE49454](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49454) | Type I/II interferon signatures in SLE, blood | 177 | Illumina HumanHT-12 v4 | 116/125 |
-| [GSE32591](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE32591) | Lupus nephritis kidney (glomerular + tubulointerstitial) | 93 | Illumina HumanRef-8 (Entrez CDF) | 110/125 |
+| [GSE32591](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE32591) | Lupus nephritis kidney (glomerular + tubulointerstitial) | 93 | Affymetrix HG-U133A Custom CDF (GPL14663) | 110/125 |
 | [GSE112943](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112943) | Cutaneous lupus **skin** + lupus nephritis **kidney** | 47 | Illumina HumanHT-12 v4 | 116/125 |
 | [GSE81622](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE81622) | SLE ± nephritis, PBMC | 55 | Illumina HumanHT-12 v4 | 116/125 |
 | [GSE52471](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE52471) | Discoid/cutaneous lupus skin vs. psoriasis | 38 | Affymetrix HG-U133A 2.0 | 76/125 |
@@ -145,7 +145,7 @@ Four microarray platforms are represented in Phase 2, each requiring a different
 |---|---|---|
 | [GPL10558](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL10558) (Illumina HumanHT-12 v4) | 6 of the 9 new datasets | `Gene symbol` |
 | [GPL13667](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL13667) (Affymetrix HG-U219) | GSE110169 | `Gene Symbol` |
-| [GPL14663](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL14663) (Illumina HumanRef-8, Entrez CDF) | GSE32591 | `Gene Symbol` |
+| [GPL14663](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL14663) (Affymetrix HG-U133A, Custom Entrez CDF) | GSE32591 | `Gene Symbol` |
 | [GPL571](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL571) (Affymetrix HG-U133A 2.0) | GSE52471 | `Gene Symbol` |
 
 Probes mapping to the same gene symbol are collapsed by taking the mean expression across probes.
