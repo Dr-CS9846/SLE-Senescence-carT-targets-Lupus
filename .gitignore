@@ -38,6 +38,7 @@ Thumbs.db
 
 # Data (raw GEO downloads - too large for GitHub)
 datasets/
+data/platform_annotations/
 
 # Local config
 .claude/
