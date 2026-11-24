@@ -286,6 +286,9 @@ to name one, the row or cell.
 | Results, Disease-Specific Senescence Burden | ROC AUC = 0.679, bootstrap 95% CI | `stat_synovium_omnibus.txt` | second line |
 | Results, Multi-Target Senescence Scoring | Combined vs. single-marker bootstrap CIs (which comparisons exclude 0) | `results/tables/stat_combined_bootstrap.csv` | `excludes_zero` column |
 | Results, Multi-Target Senescence Scoring | Combination-search rank of CD38+CD44+CSPG4 (6th of 20); top combination CD38+ICAM1+VCAM1 (r = 0.665) | `results/tables/stat_combination_search.csv` | `rank` column |
+| Abstract, Results, Discussion (Multi-Target Senescence Scoring) | Combined score across 5 datasets (r = 0.576–0.975 in 4; r = 0.259, ns, in GSE52471) | `results/tables/stat_combined_multidataset.csv` | one row per dataset |
+| Results, Pooled estimates paragraph | Canonical-subset vs. full-SenMayo CD38 correlations; excluded-subset CD38 correlations | `results/tables/stat_S3.csv`, `stat_S7.csv` | `Target == 'CD38'` rows |
+| Results, CAR-T Target Associations (CD38 paragraph) | CD38 weak-to-moderate in 9 of 11 datasets; r > 0.6 only in GSE32591 and GSE139358 | `results/tables/cart_target_statistics.csv` | `Target == 'CD38'` rows |
 | Limitations / Pooled estimates paragraph | Composition adjustment flips significance (e.g. GSE139358 CD38 r=0.71 unadjusted to r=-0.38 adjusted) | `results/tables/stat_S4.csv` | `Dataset == 'GSE139358' & Target == 'CD38'` |
 | Limitations | Composition/canonical sensitivity covers 5 of 12 confirmatory datasets | `results/tables/stat_S3.csv`, `stat_S4.csv`, `stat_S7.csv` | unique `Dataset` values in each file |
 | Methods, dataset registry | GEO metadata (title, organism, n, platform, release date) for the 12 target-correlation datasets | `docs/dataset_registry.csv` | one row per accession |
