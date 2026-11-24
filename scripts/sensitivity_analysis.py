@@ -28,6 +28,10 @@ import pandas as pd
 from scipy import stats
 from sklearn.metrics import roc_curve, auc
 from statsmodels.stats.multitest import multipletests
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(REPO_ROOT, 'results', 'tables')
@@ -169,6 +173,58 @@ def synovium_analysis():
     print(f"  KW H={h:.3f} p={kw_p:.4f}; groups used: {groups_present}")
     print(summary.to_string(index=False))
     print(f"  ROC AUC={roc_auc:.3f}, 95% CI ({auc_ci[0]:.3f}, {auc_ci[1]:.3f})")
+
+    # --- Regenerate Figure 2 with the corrected 5-group labelling (fixes the
+    # 'PSO' vs 'SA' bug in analyze_results.py's fig2_disease_comparison,
+    # which silently dropped the SA group from every panel). Three panels,
+    # same layout as the original figure, now with correct data and with
+    # Holm-corrected p-values and Cliff's delta shown instead of raw effect
+    # size and unadjusted p alone. ---
+    colors = {'SLE': '#E53935', 'OA': '#1E88E5', 'RA': '#43A047', 'MIC': '#FB8C00', 'SA': '#8E24AA'}
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+
+    ax = axes[0]
+    sns.boxplot(data=df, x='Group', y='Senescence_Score', order=groups_present,
+                hue='Group', palette=colors, legend=False, ax=ax, linewidth=0.8)
+    sns.stripplot(data=df, x='Group', y='Senescence_Score', order=groups_present,
+                  color='black', size=6, ax=ax, zorder=5)
+    ax.set_title(f'A. Senescence by Disease Group\n(Kruskal-Wallis H={h:.2f}, p={kw_p:.4f})')
+    ax.set_ylabel('Senescence Score (Z)')
+    ax.set_xlabel('')
+
+    ax = axes[1]
+    bars = ax.bar(summary['Comparison'], summary['cliffs_delta'],
+                   color=['#E53935' if d > 0 else '#1E88E5' for d in summary['cliffs_delta']],
+                   edgecolor='white')
+    y_err_lo = summary['cliffs_delta'] - summary['delta_ci_lo']
+    y_err_hi = summary['delta_ci_hi'] - summary['cliffs_delta']
+    ax.errorbar(summary['Comparison'], summary['cliffs_delta'],
+                yerr=[y_err_lo, y_err_hi], fmt='none', ecolor='black', capsize=4)
+    for i, row in summary.iterrows():
+        sig = '**' if row['p_holm'] < 0.01 else '*' if row['p_holm'] < 0.05 else 'ns'
+        ax.text(i, row['delta_ci_hi'] + 0.08, f"p={row['p_holm']:.3f}\n{sig}", ha='center', fontsize=8)
+    ax.set_title("B. Effect Size (SLE vs. Each Comparator)\nCliff's delta, bootstrap 95% CI, Holm-corrected p")
+    ax.set_ylabel("Cliff's delta")
+    ax.axhline(y=0, color='gray', linestyle='--', alpha=0.5)
+    ax.set_ylim(-1.3, 1.3)
+    plt.setp(ax.get_xticklabels(), rotation=20, ha='right')
+
+    ax = axes[2]
+    ax.plot(fpr, tpr, color='#E53935', lw=2, label=f'AUC = {roc_auc:.3f}\n95% CI ({auc_ci[0]:.3f}-{auc_ci[1]:.3f})')
+    ax.plot([0, 1], [0, 1], 'k--', alpha=0.3)
+    ax.set_xlabel('False Positive Rate')
+    ax.set_ylabel('True Positive Rate')
+    ax.set_title('C. ROC: SLE vs. Non-SLE\n(exploratory, 4 SLE samples)')
+    ax.legend(loc='lower right', fontsize=9)
+
+    plt.suptitle('Figure 2: Senescence Scores by Disease Group in Synovial Tissue (GSE36700)\n'
+                  '[Corrected 2026-11-25: SA (seronegative arthritis) group restored; see docs/STATISTICAL_ANALYSIS.md Part B]',
+                  fontsize=11, fontweight='bold', y=1.04)
+    plt.tight_layout()
+    fig_path = os.path.join(REPO_ROOT, 'results', 'figures', 'fig2_disease_comparison.png')
+    plt.savefig(fig_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"\nFigure 2 regenerated (corrected 5-group data) -> {fig_path}")
 
 
 # ---------------------------------------------------------------------------
