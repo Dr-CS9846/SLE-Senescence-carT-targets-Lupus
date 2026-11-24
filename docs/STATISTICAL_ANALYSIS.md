@@ -246,9 +246,20 @@ underscoring that cell-type composition is a real confound worth stating plainly
 — consistent with what the manuscript's Limitations section already says about this being an
 approximation, not a validated deconvolution.
 
-**Not run in this revision:** full composition/canonical coverage of the other 7 confirmatory
-datasets; the GPL10558/GPL13667 annotation-matching inconsistency itself (left as a maintenance
-item, not fixed); S2, S6, S8 (already P2 in Part A).
+**Deviation 5 — combined-score analysis extended from 1 to 5 datasets, answering the editor's and
+Reviewer 1's explicit point that it was done in only one dataset (GSE228066).** Reusing the gene
+matrices already loaded for Deviation 4's analysis, the same combined-score definition (DEC-08)
+was computed in GSE139358, GSE182825, and GSE32591 in addition to GSE228066, plus GSE52471.
+GSE228066 reproduced exactly (r=0.576), confirming correct calibration. Results:
+`stat_combined_multidataset.csv`. The combined score exceeded every single marker in GSE228066,
+GSE139358, GSE182825, and GSE32591 (r=0.576-0.975, all p<0.001) but was not significant and
+weaker than CD38 alone in GSE52471 (r=0.259, p=0.117, vs. CD38 alone r=0.516, p<0.001) --
+reported as-is, not selectively. Does not cover the other 7 confirmatory datasets, for the same
+reason as Deviation 4.
+
+**Not run in this revision:** full composition/canonical/combined-score coverage of the other 7
+confirmatory datasets; the GPL10558/GPL13667 annotation-matching inconsistency itself (left as a
+maintenance item, not fixed); S2, S6, S8 (already P2 in Part A).
 
 ## Part C — Traceability
 
