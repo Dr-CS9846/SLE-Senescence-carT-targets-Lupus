@@ -216,7 +216,6 @@ The following steps are proposed to validate computational findings before any t
 - **Dependencies**: pandas, numpy, scipy, openpyxl, scikit-learn, matplotlib, seaborn (see `requirements.txt`)
 - **Pipeline**: `scripts/pipeline_complete.py` (senescence scoring)
 - **Analysis**: `scripts/analyze_results.py` (statistics and figures)
-- **Container**: `Dockerfile` for reproducible execution
 - **Runtime**: ~3 minutes (19 datasets)
 - **Memory**: <2 GB
 
