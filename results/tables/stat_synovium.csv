@@ -1,0 +1,5 @@
+Comparison,n_SLE,n_other,cliffs_delta,delta_ci_lo,delta_ci_hi,p_unadjusted,p_holm
+SLE vs OA,4,5,0.8,0.2,1.0,0.063492,0.253968
+SLE vs RA,4,7,-0.2143,-1.0,0.6429,0.648485,0.685714
+SLE vs MIC,4,5,0.6,-0.2,1.0,0.190476,0.571429
+SLE vs SA,4,4,0.5,-0.5,1.0,0.342857,0.685714

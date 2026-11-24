@@ -1,0 +1,2 @@
+Kruskal-Wallis H=14.0132, p=0.007253, groups=['SLE', 'OA', 'RA', 'MIC', 'SA'], group sizes={'RA': 7, 'OA': 5, 'MIC': 5, 'SLE': 4, 'SA': 4}
+ROC AUC (SLE vs non-SLE) = 0.6786, bootstrap 95% CI = (0.2609, 0.9565), n_boot=1971

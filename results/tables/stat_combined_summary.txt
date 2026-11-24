@@ -1,0 +1,1 @@
+Combined (CD38+CD44+CSPG4) score vs senescence, GSE228066 (n=45): r=0.5764, p=0.000034

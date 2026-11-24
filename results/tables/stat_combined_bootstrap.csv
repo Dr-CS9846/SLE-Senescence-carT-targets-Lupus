@@ -1,0 +1,7 @@
+Comparison,diff_mean_boot,diff_ci_lo,diff_ci_hi,excludes_zero
+combined_vs_CD38,0.1748,0.0313,0.3453,True
+combined_vs_CD44,0.2206,-0.1208,0.573,False
+combined_vs_CSPG4,0.3413,0.085,0.6364,True
+combined_vs_ICAM1,0.2373,-0.1884,0.6369,False
+combined_vs_VCAM1,0.3002,-0.0616,0.6549,False
+combined_vs_EGFR,,,,False

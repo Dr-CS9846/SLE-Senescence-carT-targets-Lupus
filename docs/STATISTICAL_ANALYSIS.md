@@ -75,12 +75,16 @@ independently in each dataset, with its two-sided p-value.
 
 ### A.7 Combined score
 
-- **DEC-08.** The combined score is the mean of the within-dataset z-scores of CD38, CD44, and
-  CSPG4. This matches what the existing code (`scripts/analyze_results.py`) already computes;
-  it is written down here, before any new confirmatory run, as the pre-specified definition. The
-  combination's history is disclosed in Part B: earlier manuscript text named a different third
-  marker (ICAM1) in places, while the committed code has always used CSPG4. Both facts are
-  stated plainly, not reconciled by changing either without saying so.
+- **DEC-08 [corrected 2026-11-24, see Part B].** The combined score is the row-mean, across
+  CD38, CD44, and CSPG4, of each gene's log2(CPM+1) expression value (not z-scored). This is
+  what the existing code (`scripts/analyze_results.py`, `fig8_target_combination`) actually
+  computes; an earlier version of this line in Part A incorrectly described the combination as
+  a mean of within-dataset z-scores, which does not reproduce the manuscript's r=0.576 (it gives
+  r=0.456 on the same data). This was caught by independently recomputing both versions before
+  reporting either, not assumed. The raw-mean definition is the one in the manuscript and is the
+  one used by all downstream scripts in this revision. The combination's history is disclosed
+  separately in Part B: earlier manuscript text named a different third marker (ICAM1) in
+  places, while the committed code has always used CSPG4.
 
 ### A.8 Comparison of the combined score with single markers
 
