@@ -12,7 +12,8 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-REPO = r"C:\Users\Enclair.tech\AppData\Local\Temp\claude\D--New-folder-Research-53--Zeshan-Gondal-5--Lupus\bf7e9585-5ebb-4727-8b9c-9974a46ffc64\scratchpad\repo_audit\repo"
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 plt.rcParams.update({'font.size': 10, 'axes.titlesize': 12, 'axes.labelsize': 11,
                       'figure.dpi': 150, 'savefig.dpi': 300, 'savefig.bbox': 'tight'})
