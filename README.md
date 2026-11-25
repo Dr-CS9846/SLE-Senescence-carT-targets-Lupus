@@ -207,6 +207,8 @@ Across the 12 datasets with usable target-gene data (66 of 72 possible target ×
 
 None of this establishes CAR-T efficacy, target safety, or clinical utility. It establishes a ranked, evidence-graded, fully traceable prioritization for the protein-level and functional validation that would have to follow.
 
+**Added 2026-11-25, in response to editor/reviewer requests:** the combined CD38+CD44+CSPG4 score (originally evaluated only in GSE228066) was extended to four further datasets, random-effects pooling was added by tissue, and composition-adjustment / canonical-gene sensitivity analyses were added for 5 of the 12 confirmatory datasets. Full detail and underlying numbers: [`docs/RESULTS.md`](docs/RESULTS.md) and [`docs/STATISTICAL_ANALYSIS.md`](docs/STATISTICAL_ANALYSIS.md).
+
 ---
 
 ## Data Availability

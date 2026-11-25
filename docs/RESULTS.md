@@ -55,7 +55,7 @@ Source: `results/VERIFIED_RESULTS.json` (disease_comparison key)
 | **VCAM1** | r=0.269, p=0.075 | r=0.466, p=0.051 | r=0.611, p<0.001 | 1/3 |
 | **EGFR** | r=-0.146, p=0.337 | r=0.635, p=0.005 | r=-0.052, p=0.746 | 1/3 |
 
-**Combined target score**: CD38+CD44+CSPG4 mean expression correlates with senescence at r=0.576, p<0.0001 (GSE228066), stronger than any individual target.
+**Combined target score**: CD38+CD44+CSPG4 mean expression correlates with senescence at r=0.576, p<0.0001 (GSE228066). A paired bootstrap shows this is significantly higher than CD38 alone and CSPG4 alone, but not significantly higher than CD44, ICAM1, or VCAM1 alone. [Updated 2026-11-25: extended to four further datasets — see below.]
 
 **Phase 2 (9 additional real datasets, added 2026-07-05)** — the same six targets tested independently across GSE65391, GSE108497, GSE72326, GSE110169 (CD44 only — see Limitations), GSE49454, GSE32591, GSE112943, GSE81622, and GSE52471. Full per-dataset numbers: `results/tables/cart_target_statistics.csv`.
 
@@ -73,6 +73,52 @@ Source: `results/VERIFIED_RESULTS.json` (disease_comparison key)
 CD38 is now the single most consistent, replicated finding across 12 independent datasets spanning blood, kidney, and skin. CD44 and CSPG4 show significant associations in *both* directions depending on dataset/tissue, which is reported honestly here rather than forced into a single "validated positive marker" framing — this points to compartment-specific regulation as a follow-up question rather than undermining the overall finding. Functional validation studies (flow cytometry, functional cytotoxicity assays) are the necessary next step and are not performed in this repository.
 
 Source: `results/tables/cart_target_statistics.csv`, `results/VERIFIED_RESULTS.json`
+
+---
+
+## Multi-Dataset Combined Score, Pooling, and Sensitivity Analyses (added 2026-11-25)
+
+The combined-score comparison above was originally evaluated only in GSE228066. Reusing the
+same gene matrices, the same combined-score definition (DEC-08: raw mean of log2(CPM+1) across
+CD38, CD44, CSPG4) was extended to four further confirmatory datasets:
+
+| Dataset | Tissue | Combined r | p | Best single marker |
+|---|---|---|---|---|
+| GSE228066 | Blood | 0.576 | <0.0001 | — (reference) |
+| GSE139358 | Blood | 0.829 | <0.001 | exceeded |
+| GSE182825 | Skin | 0.975 | <0.001 | exceeded |
+| GSE32591 | Kidney | 0.883 | <0.001 | exceeded |
+| GSE52471 | Skin | 0.259 (ns) | 0.117 | underperformed CD38 alone (r=0.516) |
+
+The combined score exceeds every single marker in 4 of 5 datasets but is **not** universally
+superior — the advantage is tissue-dependent, reported as-is rather than selectively. Source:
+`results/tables/stat_combined_multidataset.csv`; full detail in
+[`docs/STATISTICAL_ANALYSIS.md`](STATISTICAL_ANALYSIS.md), Part B, Deviation 5.
+
+**Random-effects pooling, tissue stratification, and leave-one-out.** Pooled rho (Fisher z,
+DerSimonian–Laird, Hartung–Knapp) across the 11 confirmatory datasets: CD38 0.43 (95% CI
+0.24–0.59, I²=91%, the only target surviving Holm correction), CD44 0.32 (ns), CSPG4 0.16 (ns),
+ICAM1 0.34 (ns), VCAM1 0.31 (ns), EGFR 0.07 (ns). By tissue, CD38 pools at r=0.35 in blood vs.
+r=0.83 in kidney — the target-senescence association is tissue-dependent, not uniform. Source:
+`results/tables/stat_pooled_by_target.csv`, `stat_by_tissue.csv`, `stat_loo.csv`.
+
+**Composition-adjustment and canonical-gene sensitivity (answers Reviewer 2, points 1 and 2;
+covers 5 of the 12 confirmatory datasets — see Limitations below).** Recomputing correlations on
+residuals after regressing out a fixed leukocyte-marker panel changes significance, in both
+directions, for several target-dataset pairs (e.g. GSE139358 CD38: r=0.71 unadjusted to r=-0.38
+adjusted) — direct evidence that cell-type composition is a real confound. A canonical-gene
+subset (excluding Inflammation/NF-kB/Cytokine/SASP/STAT/TGF categories, 25 of 125 genes) gives
+CD38 correlations similar to or higher than full SenMayo in 4 of these 5 datasets, but the
+excluded inflammation-only subset also correlates strongly with CD38 in 3 of 5 — so an
+inflammatory contribution to the senescence score cannot be ruled out. Source:
+`results/tables/stat_S4.csv` (composition), `stat_S3.csv`/`stat_S7.csv` (canonical/excluded).
+
+**Known limitation.** The two analyses above cover 5 of the 12 confirmatory datasets, not all 12;
+extending further surfaced a pre-existing platform-annotation mismatch in
+`process_phase2_datasets.py` (GPL10558/GPL13667) that would have required modifying an
+already-committed data-processing script mid-revision. This was tested, found to change 7 of 8
+already-committed results, and deliberately left unresolved rather than risked — see
+[`docs/STATISTICAL_ANALYSIS.md`](STATISTICAL_ANALYSIS.md), Part B, Deviation 4.
 
 ---
 
